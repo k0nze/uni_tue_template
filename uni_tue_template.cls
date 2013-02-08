@@ -26,20 +26,6 @@
 
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage{paralist}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{xcolor}
-\usepackage{gnuplottex}
-\usepackage{cancel}
-\usepackage{graphicx}
-\usepackage{color}
-\usepackage{colortbl}
-\usepackage{array}
-\usepackage{tabularx}
-\usepackage{booktabs}
-\usepackage{caption}
-\usepackage{units}
 \usepackage{fancyhdr}
 \usepackage{setspace}
 
