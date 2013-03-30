@@ -16,7 +16,7 @@
 % along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 
-\LoadClass[12pt,oneside,a4paper]{article}
+\LoadClass[12pt,oneside,a4paper,fleqn]{scrartcl}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{uni_tue_template}
@@ -39,21 +39,197 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
+% Commands for placing head and foot parts.
+% If you like to adjust these, do so by
+% overwriting it via (for example)
+% \renewcommand{\headLeft}{my stuff}
+\newcommand{\headLeft}{}
+\newcommand{\names}{}
+\newcommand{\headRight}{}
+\newcommand{\footLeft}{}
+\newcommand{\footRight}{}
+
 % left head area
 \lhead{\headLeft}
 
 % center head area
 \chead{\names}
 
-% left head area
+% reft head area
 \rhead{\headRight}
 
-
 % left foot area
-\lfoot{}	
+\lfoot{\footLeft}	
 
 % center foot area
 \cfoot{Seite \thepage}
 
 % right foot area
-\rfoot{}
+\rfoot{\footRight}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Own commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 1. Mathematic
+
+	% 1.1 General Constructs
+	
+		% 1.1.1 Miscellanious
+		
+			% ADD SOMETHING HERE	
+	
+		% 1.1.2 Left- Right- Bracket- Constructs
+		
+			% round bracket
+			\newcommand
+			{\lrr}[1]
+			{\left(#1\right)}
+			
+			% angled bracket
+			\newcommand
+			{\lrc}[1]
+			{\left[#1\right]}
+			
+			% cambered bracket
+			\newcommand
+			{\lrv}[1]
+			{\left\{#1\right\}}
+			
+			% absolute value
+			\newcommand
+			{\lra}[1]
+			{\left|#1\right|}
+			
+		% 1.1.3 All- und Existenzaussagen
+			
+			% Allquantor
+			% \forall
+			
+			% Existenzquantor
+			% \exists
+
+	% 1.2 Logische Junktoren
+
+		% und- Junktor
+		\renewcommand
+		{\land}
+		{\wedge}
+		
+		% oder- Junktor
+		\renewcommand
+		{\lor}
+		{\vee}
+		
+		% nicht- Junktor
+		\renewcommand
+		{\lnot}
+		{\neg}
+		
+		% exclusive- Or (XOR)- Junktor
+		\newcommand
+		{\lxor}
+		{\oplus}
+
+	% 1.3 Mengenlehre
+		
+		% 1.3.1 Spezielle Mengen
+		
+			% natürliche Zahlen
+			\newcommand{\mn}
+			{\mathbb{N}}
+	
+			% reelle Zahlen
+			\newcommand{\mr}
+			{\mathbb{R}}
+			
+			% ganze Zahlen
+			\newcommand{\mz}
+			{\mathbb{Z}}
+			
+			% rationale Zahlen
+			\newcommand
+			{\mq}
+			{\mathbb{Q}}
+			
+			% komplexe Zahlen
+			\newcommand
+			{\mc}
+			{\mathbb{C}}
+			
+			% Lösungsmenge
+			\newcommand
+			{\ml}
+			{\mathbb{L}}
+			
+			% leere Menge
+			\newcommand
+			{\mvoid}
+			{\emptyset}
+			
+			% Potenzmenge
+			\newcommand
+			{\mpz}
+			{\mathcal{P}}
+			
+		% 1.3.2 Verknüfungsglieder von Mengen
+		
+			% Vereinigung
+			\newcommand
+			{\mor}
+			{\cup}
+		
+			% Schnitt
+			\newcommand
+			{\mand}
+			{\cap}
+			
+			% dymmetrische Differenz
+			\newcommand
+			{\mnand}
+			{\bigtriangleup}
+			
+			% Differenzmenge
+			\newcommand
+			{\mnot}
+			{\setminus}
+			
+			% Komplement
+			\newcommand
+			{\mcp}
+			{^\complement}
+			
+			% Teilmenge ("part of")
+			\newcommand
+			{\mpo}
+			{\subseteq}	
+			
+			% "Summe" aller Vereinigungen
+			% @param 1: Was unter dem Operator steht
+			% @param 2: Was über dem Operator steht
+			\newcommand
+			{\morsum}[2]
+			{\bigcup\limits_{#1}^{#2}}
+			
+			% "Summe" aller Schnitte
+			% @param 1: Was unter dem Operator steht
+			% @param 2: Was über dem Operator steht
+			\newcommand
+			{\mandsum}[2]
+			{\bigcap\limits_{#1}^{#2}}
+			
+			% Karthesisches Produkt
+			\newcommand
+			{\mkth}[2]
+			{\prod\limits_{#1}^{#2}}
+	
+	% 1.4 Abbildungen
+	
+		% Hintereinanderabbildung
+		% \circ
+
+		% ...
