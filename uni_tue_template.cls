@@ -92,17 +92,17 @@
 			
 			% angled bracket
 			\newcommand
-			{\lrc}[1]
+			{\lra}[1]
 			{\left[#1\right]}
 			
 			% cambered bracket
 			\newcommand
-			{\lrv}[1]
+			{\lrc}[1]
 			{\left\{#1\right\}}
 			
 			% absolute value
 			\newcommand
-			{\lra}[1]
+			{\lrabs}[1]
 			{\left|#1\right|}
 			
 		% 1.1.3 All- und Existenzaussagen
