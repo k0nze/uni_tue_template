@@ -21,33 +21,39 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{uni_tue_template}
 
+% better font placement
+\usepackage{lmodern}
+
 % page borders
 \usepackage[left=2.5cm,right=2.5cm,top=1.5cm,bottom=2cm,includeheadfoot]{geometry}
 
+% german spelling
 \usepackage[ngerman]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{fancyhdr}
-\usepackage{setspace}
 
-% line spacing	
-\onehalfspacing	
+% set input encdoing
+\usepackage[utf8]{inputenc}
+
+% set font encoding
+\usepackage[T1]{fontenc}
+
+% for head- and footline
+\usepackage{fancyhdr}
+
+% line spacing
+\usepackage[onehalfspacing]{setspace}
 
 \pagestyle{fancy}								
 \headheight 24pt
 
+% paragraph indent
+\parindent0mm
+
+% paragraph space
+\parskip4mm
+
 % head and foot rule
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
-
-% Commands for placing head and foot parts.
-% If you like to adjust these, do so by
-% overwriting it via (for example)
-% \renewcommand{\headLeft}{my stuff}
-\newcommand{\headLeft}{}
-\newcommand{\names}{}
-\newcommand{\headRight}{}
-\newcommand{\footLeft}{}
-\newcommand{\footRight}{}
 
 % left head area
 \lhead{\headLeft}
@@ -67,14 +73,46 @@
 % right foot area
 \rfoot{\footRight}
 
+% set indent for sub exercises
+\newlength{\subexindent}
+\setlength{\subexindent}{5mm}
 
+% set counter for exercises
+\newcounter{exercise}
+\setcounter{exercise}{1}
 
+\newcounter{subexercise}
+\setcounter{subexercise}{1}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % Own commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% 0. Miscellanious
+
+	% Commands for placing head and foot parts.
+	% If you like to adjust these, do so by
+	% overwriting it via (for example)
+	% \renewcommand{\headLeft}{my stuff}
+	\newcommand{\headLeft}{}
+	\newcommand{\names}{}
+	\newcommand{\headRight}{}
+	\newcommand{\footLeft}{}
+	\newcommand{\footRight}{}
+	
+	% for exercises
+	\newcommand
+	{\exercise}
+	{{\noindent\large\bfseries Aufgabe~\arabic{exercise}}%
+	\stepcounter{exercise}\setcounter{subexercise}{1}}
+	
+	\newcommand
+	{\subexercise}
+	{\hspace{\subexindent}\alph{subexercise})%
+	\stepcounter{subexercise}}
+	
+	
 % 1. Mathematic
 
 	% 1.1 General Constructs
