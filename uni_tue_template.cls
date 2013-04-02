@@ -52,8 +52,13 @@
 \parskip4mm
 
 % head and foot rule
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand
+{\headrulewidth}
+{0.4pt}
+
+\renewcommand
+{\footrulewidth}
+{0.4pt}
 
 % left head area
 \lhead{\headLeft}
@@ -95,11 +100,25 @@
 	% If you like to adjust these, do so by
 	% overwriting it via (for example)
 	% \renewcommand{\headLeft}{my stuff}
-	\newcommand{\headLeft}{}
-	\newcommand{\names}{}
-	\newcommand{\headRight}{}
-	\newcommand{\footLeft}{}
-	\newcommand{\footRight}{}
+	\newcommand
+	{\headLeft}
+	{}
+	
+	\newcommand
+	{\names}
+	{}
+	
+	\newcommand
+	{\headRight}
+	{}
+	
+	\newcommand
+	{\footLeft}
+	{}
+	
+	\newcommand
+	{\footRight}
+	{}
 	
 	% for exercises
 	\newcommand
@@ -178,15 +197,18 @@
 		% 1.3.1 Spezielle Mengen
 		
 			% natürliche Zahlen
-			\newcommand{\mn}
+			\newcommand
+			{\mn}
 			{\mathbb{N}}
 	
 			% reelle Zahlen
-			\newcommand{\mr}
+			\newcommand
+			{\mr}
 			{\mathbb{R}}
 			
 			% ganze Zahlen
-			\newcommand{\mz}
+			\newcommand
+			{\mz}
 			{\mathbb{Z}}
 			
 			% rationale Zahlen
