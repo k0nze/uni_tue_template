@@ -30,7 +30,7 @@
 % german spelling
 \usepackage[ngerman]{babel}
 
-% set input encdoing
+% set input encoding
 \usepackage[utf8]{inputenc}
 
 % set font encoding
@@ -66,7 +66,7 @@
 % center head area
 \chead{\names}
 
-% reft head area
+% left head area
 \rhead{\headRight}
 
 % left foot area
@@ -248,7 +248,7 @@
 			{\mand}
 			{\cap}
 			
-			% dymmetrische Differenz
+			% symmetrische Differenz
 			\newcommand
 			{\mnand}
 			{\bigtriangleup}
