@@ -130,8 +130,7 @@
 	{\subexercise}
 	{\hspace{\subexindent}\alph{subexercise})%
 	\stepcounter{subexercise}}
-	
-	
+
 % 1. Mathematic
 
 	% 1.1 General Constructs
