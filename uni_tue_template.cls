@@ -143,16 +143,7 @@
 		}
 	}	
 	
-	% for exercises
-	%\newcommand
-	%{\exercise}
-	%{{\noindent\large\bfseries Aufgabe~\arabic{exercise}}%
-	%\stepcounter{exercise}\setcounter{subexercise}{1}}
-	
-	%\newcommand
-	%{\subexercise}
-	%{\hspace{\subexindent}\alph{subexercise})%
-	%\stepcounter{subexercise}}
+	% TODO subExercise: verschiedene Nummerierungen 1. 2. 3., I II III, a, b, c ...
 
 % 1. Mathematic
 
