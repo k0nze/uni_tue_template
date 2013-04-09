@@ -12,21 +12,41 @@
 % set name for exercises
 \def \exerciseName{exName}
 
+% set subExercise numberation:
+% 1 = arabic
+% a = alphanumeric
+% i = major roman
+% I = minor roman
+\def \subExerciseNoKind{3}
+
 \begin{document}
 
 Dies ist eine Beispiel-Dokument
 
 Wie kann man den \verb+\exercise{}+ Befehl verwendet?\\
 Man kann die Nummerierung automatisch von \LaTeX\hspace{1.5mm}übernehmen lassen, indem man die Klammern hinter dem Befehl leer lässt. Also \verb+\exercise{}+.\\
-Möchte man eine individuelle Nummerierung festlegen schreibt man in die Klammern hinter dem Befehl die gewünschte Bezeichnung. Also \verb+\exercise{A}+
+Möchte man eine individuelle Nummerierung festlegen schreibt man in die Klammern hinter dem Befehl die gewünschte Bezeichnung. Also \verb+\exercise{A}+.
 
 Beispiel:\\
+\exercise{}
 \exercise{}
 automatische Nummerierung
 
 \exercise{A}
 individuelle Nummerierung
 
+\vspace{10mm}
+Wie verwendet man \verb+\subExBegin{}+ und \verb+\subExEnd+ ?\\
+Mit \verb+\subExBegin{}+ eröffnet man eine die \verb+subEx+-Umgebung, in den Klammern hinter dem Befehl kann wie in \verb+enumerate+ die Formatierung angegeben werden.
 
+Beispiel:
+\subExBegin{}
+	\item Einsum
+	\subExBegin{(i)}
+		\item ium
+		\item iium
+	\subExEnd
+	\item Zweium
+\subExEnd
 
 \end{document}

@@ -46,9 +46,17 @@
 % line spacing
 \usepackage[onehalfspacing]{setspace}
 
-% provides \isempty test
+% provides fun with if conditions
 \usepackage{ifthen}
 \usepackage{xifthen}
+\usepackage{etoolbox}
+
+% cool stuff for enumerate
+\usepackage{paralist}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define some stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -143,8 +151,21 @@
 		}
 	}	
 	
-	% TODO subExercise: verschiedene Nummerierungen 1. 2. 3., I II III, a, b, c ...
-
+	% TODO subExercise: verschiedene Nummerierungen 1. 2. 3., i ii ii ,I II III, a, b, c ...
+	\newcommand
+	{\subExBegin}[1]
+	{
+		\vspace{-4mm}
+		\ifthenelse{\isempty{#1}}
+		{\begin{enumerate}}
+		{\begin{enumerate}[#1]}		
+		\itemsep-3mm 
+	}
+	
+	\newcommand
+	{\subExEnd}
+	{\end{enumerate}}
+	
 % 1. Mathematic
 
 	% 1.1 General Constructs
