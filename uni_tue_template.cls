@@ -21,6 +21,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{uni_tue_template}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% includes
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % better font placement
 \usepackage{lmodern}
 
@@ -41,6 +45,15 @@
 
 % line spacing
 \usepackage[onehalfspacing]{setspace}
+
+% provides \isempty test
+\usepackage{ifthen}
+\usepackage{xifthen}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set some typo stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pagestyle{fancy}								
 \headheight 24pt
@@ -78,16 +91,15 @@
 % right foot area
 \rfoot{\footRight}
 
-% set indent for sub exercises
-\newlength{\subexindent}
-\setlength{\subexindent}{5mm}
 
-% set counter for exercises
-\newcounter{exercise}
-\setcounter{exercise}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% counters
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcounter{subexercise}
-\setcounter{subexercise}{1}
+% counter for exercises
+\newcounter{no}
+\setcounter{no}{1}
+\newcounter{exNo}[no]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -120,16 +132,27 @@
 	{\footRight}
 	{}
 	
-	% for exercises
 	\newcommand
-	{\exercise}
-	{{\noindent\large\bfseries Aufgabe~\arabic{exercise}}%
-	\stepcounter{exercise}\setcounter{subexercise}{1}}
+	{\exercise}[1]
+	{
+		{ \noindent \large  \bfseries \exerciseName 
+			\ifthenelse{\isempty{#1}} 
+			{ \refstepcounter{exNo}{\arabic{exNo}} }
+			{ #1 }
+			\\
+		}
+	}	
 	
-	\newcommand
-	{\subexercise}
-	{\hspace{\subexindent}\alph{subexercise})%
-	\stepcounter{subexercise}}
+	% for exercises
+	%\newcommand
+	%{\exercise}
+	%{{\noindent\large\bfseries Aufgabe~\arabic{exercise}}%
+	%\stepcounter{exercise}\setcounter{subexercise}{1}}
+	
+	%\newcommand
+	%{\subexercise}
+	%{\hspace{\subexindent}\alph{subexercise})%
+	%\stepcounter{subexercise}}
 
 % 1. Mathematic
 
