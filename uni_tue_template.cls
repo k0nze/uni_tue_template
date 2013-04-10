@@ -140,13 +140,15 @@
 	{\footRight}
 	{}
 	
+	% Do not begin a new paragraph after you used \exercise. Because the "\\" is
+	% directly implemented in the command it would otherwise cause an overfull hbox.
 	\newcommand
 	{\exercise}[1]
 	{
-		{ \noindent \large  \bfseries \exerciseName 
+		{ \noindent \large  \bfseries \exerciseName
 			\ifthenelse{\isempty{#1}} 
-			{ \refstepcounter{exNo}{\arabic{exNo}} }
-			{ #1 }
+			{\ \refstepcounter{exNo}{\arabic{exNo}}}
+			{\ #1}
 			\\
 		}
 	}	
