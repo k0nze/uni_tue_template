@@ -54,10 +54,18 @@
 % cool stuff for enumerate
 \usepackage{paralist}
 
+% usefull for tables
+\usepackage{tabu}
+
+% awesome for loop stuff
+\usepackage{forloop}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % define some stuff
 %%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\version{0.1}
 
+\def\credits{Yannick Runge \& Konstantin Lübeck}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % set some typo stuff
@@ -153,7 +161,6 @@
 		}
 	}	
 	
-	% TODO subExercise: verschiedene Nummerierungen 1. 2. 3., i ii ii ,I II III, a, b, c ...
 	\newcommand
 	{\subExBegin}[1]
 	{
@@ -167,6 +174,21 @@
 	\newcommand
 	{\subExEnd}
 	{\end{enumerate}}
+	
+	\newcommand
+	{\tableBegin}[1]
+	{\begin{tabu}{#1} \tabucline[1pt]{-}}
+	
+	\newcommand
+	{\tableHead}[1]
+	{#1 \\ \hline}
+	
+	\newcommand
+	{\tableEnd}
+	{
+		\\ \tabucline[1pt]{-}
+		\end{tabu}%
+	}
 	
 % 1. Mathematic
 
