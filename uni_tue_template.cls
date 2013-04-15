@@ -40,6 +40,10 @@
 % set font encoding
 \usepackage[T1]{fontenc}
 
+% Packages for math stuff
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
 % for head- and footline
 \usepackage{fancyhdr}
 
@@ -173,8 +177,6 @@
 	% 1.1 General Constructs
 	
 		% 1.1.1 Miscellanious
-		
-			% ADD SOMETHING HERE	
 	
 		% 1.1.2 Left- Right- Bracket- Constructs
 		
@@ -205,9 +207,31 @@
 			
 			% Existenzquantor
 			% \exists
-
+			
+		% 1.1.4 Constructs containing "\limits" command
+		
+		% Sum with limits
+		% @param 1: Index below the sum
+		% @param 2: index above the sum
+		\newcommand
+		{\limsum}[2]
+		{\sum\limits_{#1}\limits^{#2}}
+		
+		% Product with limits
+		% @param 1: Index below the product
+		% @param 2: index above the proudct
+		\newcommand
+		{\limprod}[2]
+		{\prod\limits_{#1}\limits^{#2}}
+		
+		% Limes with limits
+		\newcommand
+		{\limlim}[1]
+		{\lim\limits_{#1}}
+		
+		
 	% 1.2 Logische Junktoren
-
+		
 		% und- Junktor
 		\renewcommand
 		{\land}
