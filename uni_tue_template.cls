@@ -17,7 +17,8 @@
 
 
 % TODO
-% + common code listing enviroment
+% + common code listing enviroment (style, colors, tabs)
+% + german quotation marks
 
 
 \LoadClass[12pt,oneside,a4paper,fleqn]{scrartcl}
@@ -55,14 +56,16 @@
 \usepackage{xifthen}
 \usepackage{etoolbox}
 
+% math symbols
+\usepackage{amssymb}
+
 % cool stuff for enumerate
 \usepackage{paralist}
 
 % usefull for tables
 \usepackage{tabu}
 
-% awesome for loop stuff
-\usepackage{forloop}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % define some stuff
@@ -183,7 +186,9 @@
 	
 	\renewenvironment
 	{table}[1]
-	{\begin{tabu}{#1} \tabucline[1pt]{-}}
+	{
+		\begin{tabu}{#1}
+		\tabucline[1pt]{-}}
 	{
 		\\ \tabucline[1pt]{-}
 		\end{tabu}

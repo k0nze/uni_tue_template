@@ -51,13 +51,37 @@ a & b & c \\
 d & e & f
 \end{table}
 
+
 \vspace{8mm}
 \textbf{Befehlsübersicht}
 
-\begin{table}{lll}
+\begin{tabu*}{lll}
+\tabucline[1pt]{-}
 \tableHead{Name & Befehl & Ausgabe}
-UND-Junktor &  & $\land$\\
-ODER-Junktor &  & $\lor$
-\end{table}
+UND-Junktor & \verb|\land| & $\land$\\
+ODER-Junktor & \verb|\lor| & $\lor$\\
+NICHT-Junktor & \verb|\lnot| & $\lnot$\\
+XOR-Junktor & \verb|\lxor| & $\lxor$\\ \hline
+natürliche Zahlen & \verb|\mn| & $\mn$\\
+reelle Zahlen & \verb|\mr| & $\mr$\\
+ganze Zahlen & \verb|\mz| & $\mz$\\
+rationale Zahlen & \verb|\mq| & $\mq$\\
+komplexe Zahlen & \verb|\mc| & $\mc$\\
+Lösungsmenge & \verb|\ml| & $\ml$\\
+leere Menge & \verb|\mvoid| & $\mvoid$\\
+Potenzmenge & \verb|\mpz| & $\mpz$\\ \hline
+Vereinigung & \verb|\mor| & $\mor$\\
+Schnitt & \verb|\mand| & $\mand$\\
+symmetrische Differenz & \verb|\mnand| & $\mnand$\\
+Differenzmenge & \verb|\mnot| & $\mnot$\\
+Komplement & \verb|\mcp| & $\mcp$\\
+Teilmenge & \verb|\mpo| & $\mpo$\\
+Summe aller Vereinigungen & \verb|\morsum{UNTEN}{OBEN}| & $\morsum{A\in\mathcal{A}}{n}$\\
+Summe aller Schnitte & \verb|\mandsum{UNTEN}{OBEN}| & $\mandsum{A\in\mathcal{A}}{n}$\\ 
+Karthesisches Produkt & \verb|\mkth{UNTEN}{OBEN}| & $\mkth{A\in\mathcal{A}}{n}$ \\\hline
+build & \verb|\build| & \build \\
+credits & \verb|\credits| & \\
+\tabucline[1pt]{-}
+\end{tabu*}
 
 \end{document}
