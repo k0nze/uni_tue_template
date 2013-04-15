@@ -16,6 +16,10 @@
 % along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 
+% TODO
+% + common code listing enviroment
+
+
 \LoadClass[12pt,oneside,a4paper,fleqn]{scrartcl}
 
 \NeedsTeXFormat{LaTeX2e}
@@ -107,6 +111,8 @@
 % right foot area
 \rfoot{\footRight}
 
+% line separation within tabu
+\tabulinesep=2mm
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % counters

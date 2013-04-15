@@ -13,7 +13,7 @@
 \def \exerciseName{exName}
 
 \begin{document}
-Dies ist eine Beispiel-Dokument
+\textbf{Dies ist ein Beispiel-Dokument}
 
 Wie kann man den \verb+\exercise{}+ Befehl verwenden?\\
 Man kann die Nummerierung automatisch von \LaTeX\hspace{1.5mm}übernehmen lassen, indem man die Klammern hinter dem Befehl leer lässt. Also \verb+\exercise{}+.\\
@@ -27,7 +27,7 @@ automatische Nummerierung
 \exercise{A}
 individuelle Nummerierung
 
-\vspace{10mm}
+\vspace{8mm}
 Wie verwendet man \verb+\subExBegin{}+ und \verb+\subExEnd+ ?\\
 Mit \verb+\subExBegin{}+ eröffnet man eine die \verb+subEx+-Umgebung, in den Klammern hinter dem Befehl kann wie in \verb+enumerate+ die Formatierung angegeben werden.
 
@@ -41,13 +41,23 @@ Beispiel:
 	\item Zweium
 \subExEnd
 
-\vspace{10mm}
-Wie kann man Tabellen erstellen?
+\vspace{8mm}
+Wie kann man Tabellen erstellen?\\
+Eine Tabellen-Umgebung wird mit \verb+\begin{table}{FORMAT}+ eröffnet. Bei \verb+FORMAT+ wird wie bei \verb+tabular+ oder \verb+booktabs+ das Tabellenformat angegeben. Die erste Zeile der Tabelle wird mit dem Befehl \verb+\tableHead{}+ umschlossen, hierbei wird am Ende kein Zeilenumbruch mit \verb+\\+ oder \verb+\newline+ benötigt. Der Tabelleninhalt kann wie von \verb+tabular+ oder \verb+booktabs+ gewohnt eingegeben werden. Beendet wird die Tabellenumgebung mit \verb+\end{table}+.
 
 \begin{table}{ccc}
 \tableHead{1 & 2 & 3}
 a & b & c \\
 d & e & f
+\end{table}
+
+\vspace{8mm}
+\textbf{Befehlsübersicht}
+
+\begin{table}{lll}
+\tableHead{Name & Befehl & Ausgabe}
+UND-Junktor &  & $\land$\\
+ODER-Junktor &  & $\lor$
 \end{table}
 
 \end{document}
