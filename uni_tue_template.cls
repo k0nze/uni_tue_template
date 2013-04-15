@@ -63,7 +63,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % define some stuff
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\version{0.1}
+\def\build{1}
 
 \def\credits{Yannick Runge \& Konstantin Lübeck}
 
@@ -175,20 +175,17 @@
 	{\subExEnd}
 	{\end{enumerate}}
 	
-	\newcommand
-	{\tableBegin}[1]
+	\renewenvironment
+	{table}[1]
 	{\begin{tabu}{#1} \tabucline[1pt]{-}}
+	{
+		\\ \tabucline[1pt]{-}
+		\end{tabu}
+	}	
 	
 	\newcommand
 	{\tableHead}[1]
 	{#1 \\ \hline}
-	
-	\newcommand
-	{\tableEnd}
-	{
-		\\ \tabucline[1pt]{-}
-		\end{tabu}%
-	}
 	
 % 1. Mathematic
 
