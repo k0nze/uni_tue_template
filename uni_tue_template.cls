@@ -43,6 +43,7 @@
 % Packages for math stuff
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{amssymb}
 
 % for head- and footline
 \usepackage{fancyhdr}
@@ -176,7 +177,18 @@
 
 	% 1.1 General Constructs
 	
-		% 1.1.1 Miscellanious
+		% 1.1.1 Miscellanious / Stuff that turned out to be useful
+			
+			% Standard limes to infinity
+			%@param 1: Variable
+			\renewcommand
+			{\liminf}[1]
+			{\limlim{#1\rightarrow\infty}}
+			
+			% Standart sum to infinity
+			\newcommand
+			{\suminf}[1]
+			{\limsum{#1}{\infty}}
 	
 		% 1.1.2 Left- Right- Bracket- Constructs
 		
@@ -215,16 +227,17 @@
 		% @param 2: index above the sum
 		\newcommand
 		{\limsum}[2]
-		{\sum\limits_{#1}\limits^{#2}}
+		{\sum\limits_{#1}^{#2}}
 		
 		% Product with limits
 		% @param 1: Index below the product
 		% @param 2: index above the proudct
 		\newcommand
 		{\limprod}[2]
-		{\prod\limits_{#1}\limits^{#2}}
+		{\prod\limits_{#1}^{#2}}
 		
 		% Limes with limits
+		%@param 1: What's under the limes
 		\newcommand
 		{\limlim}[1]
 		{\lim\limits_{#1}}
