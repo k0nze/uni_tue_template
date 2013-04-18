@@ -10,7 +10,7 @@
 % This program is distributed in the hope that it will be useful, 
 % but WITHOUT ANY WARRANTY; without even the implied warranty of 
 % MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
-% General Public License for more details.
+% General Public License
 
 % You should have received a copy of the GNU General Public License 
 % along with this program; if not, see <http://www.gnu.org/licenses/>.
@@ -67,7 +67,7 @@
 % cool stuff for enumerate
 \usepackage{paralist}
 
-% usefull for tables
+% useful for tables
 \usepackage{tabu}
 
 
@@ -189,6 +189,12 @@
 	{\subExEnd}
 	{\end{enumerate}}
 	
+	% Table structure
+	% Usage:
+	% \begin{tabu}
+	% \tableHead{1stColumn&2ndColumn&3rdColumn}
+	% It's & Hammer & Time\\
+	% \end{tabu}
 	\renewenvironment
 	{table}[1]
 	{
