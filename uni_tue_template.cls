@@ -162,6 +162,12 @@
 	{\footRight}
 	{}
 	
+	% Refer to this parameter if you want to change the
+	% standard exercise name
+	\newcommand
+	{\exerciseName}
+	{Aufgabe}	
+	
 	% Do not begin a new paragraph after you used \exercise. Because the "\\" is
 	% directly implemented in the command it would otherwise cause an overfull hbox.
 	\newcommand
@@ -171,7 +177,7 @@
 			\ifthenelse{\isempty{#1}} 
 			{\ \refstepcounter{exNo}{\arabic{exNo}}}
 			{\ #1}
-			\\
+			\vspace{5mm}
 		}
 	}	
 	
