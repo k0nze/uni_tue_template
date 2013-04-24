@@ -29,6 +29,8 @@
 % includes
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage{mdframed}
+
 % better font placement
 \usepackage{lmodern}
 
@@ -51,6 +53,9 @@
 
 % for head- and footline
 \usepackage{fancyhdr}
+
+% for displaying colors
+\usepackage{xcolor}
 
 % line spacing
 \usepackage[onehalfspacing]{setspace}
@@ -219,6 +224,28 @@
 	\newcommand
 	{\gqm}[1]
 	{\glqq #1\grqq}
+	
+	% For correcting exercises
+	% @param 1:	If empty, correction text (nearly) whole textwidth.
+	% 						Else, enter something between 0 and 0.97
+	% @param 2:	If empty, no box around correction text.
+	%						Else, enter "frame" and box is drawn
+	% @param 3:	Contents of the correction
+	\newcommand
+	{\correction}[3]
+	{
+		\ifthenelse{\isempty{#1}} {
+			\def\boxwidth{.97}
+		} {
+			\def\boxwidth{#1}
+		}
+		
+		\ifthenelse{\equal{frame}{#2}} {
+			\textcolor{red}{\fbox{\parbox{\boxwidth\textwidth}{#3}}}		
+		} {
+			\textcolor{red}{\parbox{\boxwidth\textwidth}{#3}}
+		}	
+	}
 	
 % 1. Mathematic
 
