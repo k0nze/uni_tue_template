@@ -214,6 +214,12 @@
 	\newcommand
 	{\tableHead}[1]
 	{#1 \\ \hline}
+
+	% German quotation marks
+	% @param 1: Contents between quotation marks
+	\newcommand
+	{\gqm}[1]
+	{\glqq #1\grqq}
 	
 % 1. Mathematic
 
