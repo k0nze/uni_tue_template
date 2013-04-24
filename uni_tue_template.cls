@@ -53,6 +53,12 @@
 % for head- and footline
 \usepackage{fancyhdr}
 
+% for displaying colors
+\usepackage{xcolor}
+
+% for code
+\usepackage{listings}
+
 % line spacing
 \usepackage[onehalfspacing]{setspace}
 
@@ -78,6 +84,23 @@
 \def\build{1}
 
 \def\credits{Yannick Runge \& Konstantin Lübeck}
+
+% defining colors for code- style "eclipse"
+\definecolor{comment}{RGB}{63,127,95}
+\definecolor{string}{RGB}{42,0,255}
+\newcommand{\javastring}[1]{\textcolor{string}{\anfz{#1}}}
+
+% defining code- style "eclipse"
+\lstdefinestyle{java}{%
+	language=JAVA,%
+	commentstyle=\color{comment},%
+	stringstyle=\color{string},%
+	keywordstyle=\color{black}\bfseries,%
+	basicstyle=\ttfamily\small,%
+	showstringspaces=false,%
+	columns=flexible,%
+	moredelim=[is][\itshape]{@@}{@@}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % set some typo stuff
