@@ -88,6 +88,7 @@
 % defining colors for code- style "eclipse"
 \definecolor{comment}{RGB}{63,127,95}
 \definecolor{string}{RGB}{42,0,255}
+\definecolor{keyword}{RGB}{117,0,89}
 \newcommand{\javastring}[1]{\textcolor{string}{\anfz{#1}}}
 
 % defining code- style "eclipse"
@@ -95,8 +96,25 @@
 	language=JAVA,%
 	commentstyle=\color{comment},%
 	stringstyle=\color{string},%
-	keywordstyle=\color{black}\bfseries,%
+	keywordstyle=\color{keyword}\bfseries,%
 	basicstyle=\ttfamily\small,%
+	numbers=left,
+	numberstyle=\tiny\color{black},
+	stepnumber=1,
+	showstringspaces=false,%
+	columns=flexible,%
+	moredelim=[is][\itshape]{@@}{@@}
+}
+
+\lstdefinestyle{php}{%
+	language=PHP,%
+	commentstyle=\color{comment},%
+	stringstyle=\color{string},%
+	keywordstyle=\color{keyword}\bfseries,%
+	basicstyle=\ttfamily\small,%
+	numbers=left,
+	numberstyle=\tiny\color{black},
+	stepnumber=1,
 	showstringspaces=false,%
 	columns=flexible,%
 	moredelim=[is][\itshape]{@@}{@@}
