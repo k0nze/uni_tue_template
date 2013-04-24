@@ -15,7 +15,7 @@
 \begin{document}
 \textbf{Dies ist ein Beispiel-Dokument}
 
-Wie kann man den \verb+\exercise{}+ Befehl verwenden?\\
+\textbf{Wie kann man den} \verb+\exercise{}+ \textbf{Befehl verwenden?}\vspace{2mm}\\
 Man kann die Nummerierung automatisch von \LaTeX\hspace{1.5mm}übernehmen lassen, indem man die Klammern hinter dem Befehl leer lässt. Also \verb+\exercise{}+.\\
 Möchte man eine individuelle Nummerierung festlegen schreibt man in die Klammern hinter dem Befehl die gewünschte Bezeichnung. Also \verb+\exercise{A}+.
 
@@ -28,7 +28,7 @@ automatische Nummerierung
 individuelle Nummerierung
 
 \vspace{5mm}
-Wie verwendet man \verb+\subExBegin{}+ und \verb+\subExEnd+ ?\\
+\textbf{Wie verwendet man} \verb+\subExBegin{}+ \textbf{und} \verb+\subExEnd+ \textbf{?}\vspace{3mm}\\
 Mit \verb+\subExBegin{}+ eröffnet man eine die \verb+subEx+-Umgebung, in den Klammern hinter dem Befehl kann wie in \verb+enumerate+ die Formatierung angegeben werden.
 
 Beispiel:
@@ -41,8 +41,8 @@ Beispiel:
 	\item Zweium
 \subExEnd
 
-\vspace{5mm}
-Wie kann man Tabellen erstellen?\\
+\vspace{3mm}
+\textbf{Wie kann man Tabellen erstellen?}\vspace{2mm}\\
 Eine Tabellen-Umgebung wird mit \verb+\begin{table}{FORMAT}+ eröffnet. Bei \verb+FORMAT+ wird wie bei \verb+tabular+ oder \verb+booktabs+ das Tabellenformat angegeben. Die erste Zeile der Tabelle wird mit dem Befehl \verb+\tableHead{}+ umschlossen, hierbei wird am Ende kein Zeilenumbruch mit \verb+\\+ oder \verb+\newline+ benötigt. Der Tabelleninhalt kann wie von \verb+tabular+ oder \verb+booktabs+ gewohnt eingegeben werden. Beendet wird die Tabellenumgebung mit \verb+\end{table}+.
 
 \begin{table}{ccc}
@@ -50,7 +50,6 @@ Eine Tabellen-Umgebung wird mit \verb+\begin{table}{FORMAT}+ eröffnet. Bei \ver
 a & b & c \\
 d & e & f
 \end{table}
-
 \newpage
 
 \textbf{How to use the \gqm{correction} - command:}
@@ -58,6 +57,48 @@ d & e & f
 \correction{}{frame}{There once was a young man named Konstantin who was coding all day long until he turned into a compiler himself. This was the day when he, as he likes to call it, "touched the dark side of the force" . From now on, he no longer called himself "Konstantin"\ but "Konze"\ and cruelly began to reject every scientific paper that wasn't written in \LaTeX.}
 
 \correction{.5}{}{There once was a young man named Konstantin who was coding all day long until he turned into a compiler himself. This was the day when he, as he likes to call it, "touched the dark side of the force" . From now on, he no longer called himself "Konstantin"\ but "Konze"\ and cruelly began to reject every scientific paper that wasn't written in \LaTeX.}
+
+\newpage
+
+\textbf{Code einbinden}\vspace{2mm}\\
+Dies ist ein Beispiel für den Verwendung der von \verb+\begin{lstlisting}[style=LANG]+ und \verb+\end{lstlisting}+.\vspace{3mm}\\
+Beispiel: \textbf{Java}
+
+\begin{lstlisting}[style=java]
+public class Test {
+	private static final int myStaticNumber = 7;
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		
+		/* This is a very stupid thing to do*/
+		for (int i = 0; i < 10; ++i) {
+			--i;
+		}
+		
+		/* See the source code if you want to write 
+		 *someting in italics*/
+		System.out.println(Test.@@myStaticNumber@@);
+	}
+}
+\end{lstlisting}
+
+\begin{lstlisting}[style=php]
+<?php
+	echo "Hello World";
+	
+	/* This is a very stupid thing to do */
+	for($i = 0; $i < 10; $i++) {
+		$i--;
+	}
+
+	/* Remember this for the future */
+	if($you == "toasted bread") {
+		echo "go home and leave the university";
+	}
+
+?>
+\end{lstlisting}
+
 
 \newpage
 

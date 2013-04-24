@@ -20,6 +20,7 @@
 % + common code listing enviroment (style, colors, tabs)
 
 
+
 \LoadClass[12pt,oneside,a4paper,fleqn]{scrartcl}
 
 \NeedsTeXFormat{LaTeX2e}
@@ -57,6 +58,9 @@
 % for displaying colors
 \usepackage{xcolor}
 
+% for code
+\usepackage{listings}
+
 % line spacing
 \usepackage[onehalfspacing]{setspace}
 
@@ -82,6 +86,41 @@
 \def\build{1}
 
 \def\credits{Yannick Runge \& Konstantin Lübeck}
+
+% defining colors for code- style "eclipse"
+\definecolor{comment}{RGB}{63,127,95}
+\definecolor{string}{RGB}{42,0,255}
+\definecolor{keyword}{RGB}{117,0,89}
+\newcommand{\javastring}[1]{\textcolor{string}{\anfz{#1}}}
+
+% defining code- style "eclipse"
+\lstdefinestyle{java}{%
+	language=JAVA,%
+	commentstyle=\color{comment},%
+	stringstyle=\color{string},%
+	keywordstyle=\color{keyword}\bfseries,%
+	basicstyle=\ttfamily\small,%
+	numbers=left,
+	numberstyle=\tiny\color{black},
+	stepnumber=1,
+	showstringspaces=false,%
+	columns=flexible,%
+	moredelim=[is][\itshape]{@@}{@@}
+}
+
+\lstdefinestyle{php}{%
+	language=PHP,%
+	commentstyle=\color{comment},%
+	stringstyle=\color{string},%
+	keywordstyle=\color{keyword}\bfseries,%
+	basicstyle=\ttfamily\small,%
+	numbers=left,
+	numberstyle=\tiny\color{black},
+	stepnumber=1,
+	showstringspaces=false,%
+	columns=flexible,%
+	moredelim=[is][\itshape]{@@}{@@}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % set some typo stuff
