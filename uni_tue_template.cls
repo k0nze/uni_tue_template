@@ -18,7 +18,6 @@
 
 % TODO
 % + common code listing enviroment (style, colors, tabs)
-% + german quotation marks
 
 
 \LoadClass[12pt,oneside,a4paper,fleqn]{scrartcl}
