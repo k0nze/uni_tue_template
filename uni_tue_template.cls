@@ -296,8 +296,13 @@
 	\setboolean{correctionON}{true}
 	
 	% For switching correction value
-	\newcommand{\CON}{\setboolean{correctionON}{true}}
-	\newcommand{\COFF}{\setboolean{correctionON}{false}}
+	\newcommand
+	{\CON}
+	{\setboolean{correctionON}{true}}
+	
+	\newcommand
+	{\COFF}
+	{\setboolean{correctionON}{false}}
 	
 % 1. Mathematic
 
