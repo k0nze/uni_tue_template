@@ -58,6 +58,18 @@ d & e & f
 
 \correction{.5}{}{There once was a young man named Konstantin who was coding all day long until he turned into a compiler himself. This was the day when he, as he likes to call it, "touched the dark side of the force" . From now on, he no longer called himself "Konstantin"\ but "Konze"\ and cruelly began to reject every scientific paper that wasn't written in \LaTeX.}
 
+\textbf{How to use the \gqm{switch} - command:}
+
+\verb+\CON+
+\CON
+
+\verb+\correction{.25}{frame}{You've been a bad boy!}+ turns into \correction{.27}{frame}{You've been a bad boy!}
+
+\verb+\COFF+
+\COFF
+
+\verb+\correction{.25}{frame}{You've been a bad boy!}+ turns into \correction{.27}{frame}{You've been a bad boy!} (nada)
+
 \newpage
 
 \textbf{Code einbinden}\vspace{2mm}\\
@@ -70,13 +82,13 @@ public class Test {
 	public static void main(String[] args) {
 		System.out.println("Hello World");
 		
-		/* This is a very stupid thing to do*/
+		/* This is a very stupid thing to do */
 		for (int i = 0; i < 10; ++i) {
 			--i;
 		}
 		
 		/* See the source code if you want to write 
-		 *someting in italics*/
+		 * someting in italics */
 		System.out.println(Test.@@myStaticNumber@@);
 	}
 }
@@ -90,7 +102,7 @@ public class Test {
 	for($i = 0; $i < 10; $i++) {
 		$i--;
 	}
-
+	
 	/* Remember this for the future */
 	if($you == "toasted bread") {
 		echo "go home and leave the university";

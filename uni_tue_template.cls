@@ -30,6 +30,7 @@
 % includes
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% for multi- line frames
 \usepackage{mdframed}
 
 % better font placement
@@ -91,7 +92,6 @@
 \definecolor{comment}{RGB}{63,127,95}
 \definecolor{string}{RGB}{42,0,255}
 \definecolor{keyword}{RGB}{117,0,89}
-\newcommand{\javastring}[1]{\textcolor{string}{\anfz{#1}}}
 
 % defining code- style "eclipse"
 \lstdefinestyle{java}{%
@@ -266,25 +266,43 @@
 	
 	% For correcting exercises
 	% @param 1:	If empty, correction text (nearly) whole textwidth.
-	% 						Else, enter something between 0 and 0.97
+	% 						Else, enter something between 0 and 1 (default 0.95)
 	% @param 2:	If empty, no box around correction text.
 	%						Else, enter "frame" and box is drawn
 	% @param 3:	Contents of the correction
 	\newcommand
 	{\correction}[3]
 	{
-		\ifthenelse{\isempty{#1}} {
-			\def\boxwidth{.97}
+		\ifthenelse{\boolean{correctionON}}{
+			\ifthenelse{\isempty{#1}} {
+				\def\boxwidth{.95}
+			} {
+				\def\boxwidth{#1}
+			}
+			
+			\ifthenelse{\equal{frame}{#2}} {
+				\textcolor{red}{\fbox{\parbox{\boxwidth\textwidth}{#3}}}		
+			} {
+				\textcolor{red}{\parbox{\boxwidth\textwidth}{#3}}
+			}
 		} {
-			\def\boxwidth{#1}
-		}
-		
-		\ifthenelse{\equal{frame}{#2}} {
-			\textcolor{red}{\fbox{\parbox{\boxwidth\textwidth}{#3}}}		
-		} {
-			\textcolor{red}{\parbox{\boxwidth\textwidth}{#3}}
+			%If disabled, do nothing
 		}	
 	}
+	
+	% Switch for correction command. If enabled, corrections are shown,
+	% if not, they're (obviously) not
+	\newboolean{correctionON}
+	\setboolean{correctionON}{true}
+	
+	% For switching correction value
+	\newcommand
+	{\CON}
+	{\setboolean{correctionON}{true}}
+	
+	\newcommand
+	{\COFF}
+	{\setboolean{correctionON}{false}}
 	
 % 1. Mathematic
 
