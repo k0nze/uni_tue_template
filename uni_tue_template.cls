@@ -479,3 +479,9 @@
 		% \circ
 
 		% ...
+	% 1.5 Analysis
+		
+			% Grad einer Funktion
+			\newcommand
+			{\grad}
+			{\mathrm{grad}}
