@@ -56,6 +56,9 @@
 % for head- and footline
 \usepackage{fancyhdr}
 
+% for graphics
+\usepackage{tikz}
+
 % for displaying colors
 \usepackage{xcolor}
 
@@ -309,6 +312,45 @@
 	% 1.1 General Constructs
 	
 		% 1.1.1 Miscellanious / Stuff that turned out to be useful
+			
+			% Environment for drawing graphics
+			\newenvironment{function}[4]
+			{%
+			\begin{tikzpicture}[domain=#1:#3]
+			%	
+				\newlength{\xmin}
+				\newlength{\xmax}
+				\newlength{\ymin}
+				\newlength{\ymax}
+			%	
+				\setlength{\xmin}{#1cm}
+				\setlength{\ymin}{#2cm}
+				\setlength{\xmax}{#3cm}
+				\setlength{\ymax}{#4cm}
+			%	
+				\addtolength{\xmax}{-.1cm}
+				\addtolength{\ymax}{-.1cm}
+				\addtolength{\xmin}{-.1cm}
+				\addtolength{\ymin}{-.1cm}
+			%	
+				\draw [very thin, color=gray] (\xmin,\ymin) grid (\xmax,\ymax);
+			%	
+				\setlength{\xmin}{#1cm}
+				\setlength{\ymin}{#2cm}
+			%	
+				\addtolength{\xmax}{.3cm}
+				\addtolength{\xmin}{-.2cm}
+				\draw[->] (\xmin,0) -- (\xmax,0) node[right] {$x$};
+			%	
+				\addtolength{\ymax}{.3cm}
+				\addtolength{\ymin}{-.2cm}
+				\draw[->] (0,\ymin) -- (0,\ymax) node[above] {$f(x)$};
+			}%
+			{\end{tikzpicture}}
+			
+			% function inside the graphics environment
+			\newcommand{\newfunction}[2]
+			{\draw[] plot (\x,#1) node[right] {$#2$};}
 			
 			% Standard limes to infinity
 			%@param 1: Variable
