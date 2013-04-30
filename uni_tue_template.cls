@@ -452,6 +452,11 @@
 			{\mand}
 			{\cap}
 			
+			% Ohne
+			\newcommand
+			{\mwithout}
+			{\setminus}
+			
 			% symmetrische Differenz
 			\newcommand
 			{\mnand}
