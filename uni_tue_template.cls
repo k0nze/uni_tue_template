@@ -26,35 +26,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{uni_tue_template}
 
-\usepackage{pgfplots}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pgfplotsset{
-    double y domain/.code 2 args={
-        \pgfmathsetmacro\doubleymin{#1*2}
-        \pgfmathsetmacro\doubleymax{#2*2}
-    },
-    ejes/.style args={#1:#2 #3:#4}{
-        double y domain={#3}{#4},
-        domain=#1:#2,
-        ymin=#3,ymax=#4, restrict y to domain=\doubleymin:\doubleymax,
-        samples=100,
-        enlargelimits=false,
-        axis lines=middle,
-        xtick={#1,...,#2}, ytick={#3,...,#4},
-        xticklabels=\empty, yticklabels=\empty,
-        every axis plot post/.style={
-            black,
-            mark=none,
-            smooth
-        },
-        scale only axis,
-        width=4cm,
-        height=4cm
-    }
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % includes
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -87,6 +58,8 @@
 
 % for graphics
 \usepackage{tikz}
+% for functions
+\usepackage{pgfplots}
 
 % for displaying colors
 \usepackage{xcolor}
@@ -151,6 +124,32 @@
 	showstringspaces=false,%
 	columns=flexible,%
 	moredelim=[is][\itshape]{@@}{@@}
+}
+
+% set global parameters for pgfplot
+\pgfplotsset{
+    double y domain/.code 2 args={
+        \pgfmathsetmacro\doubleymin{#1*2}
+        \pgfmathsetmacro\doubleymax{#2*2}
+    },
+    ejes/.style args={#1:#2 #3:#4}{
+        double y domain={#3}{#4},
+        domain=#1:#2,
+        ymin=#3,ymax=#4, restrict y to domain=\doubleymin:\doubleymax,
+        samples=100,
+        enlargelimits=false,
+        axis lines=middle,
+        xtick={#1,...,#2}, ytick={#3,...,#4},
+        xticklabels=\empty, yticklabels=\empty,
+        every axis plot post/.style={
+            black,
+            mark=none,
+            smooth
+        },
+        scale only axis,
+        width=4cm,
+        height=4cm
+    }
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -335,10 +334,10 @@
 	{\COFF}
 	{\setboolean{correctionON}{false}}
 	
+	% For drawing functions
 	\newenvironment
 	{function}[1]
 	{%
-		\def\bla{grid=major}
 	\begin{tikzpicture}
 		\ifthenelse{\isempty{#1}}{
 			\begin{axis}[scale=1.25,ejes=-4:4 -4:4,ylabel=$\scriptstyle f(x)$,xlabel=$\scriptstyle x$,title={Title},grid=major]
@@ -350,6 +349,11 @@
 		\end{axis}
 	\end{tikzpicture}
 	}
+	
+	% Little wrapper for drawing a function in the "function"- environment
+	\newcommand{
+	\drawfunction}[1]
+	{\addplot{#1};}
 	
 % 1. Mathematic
 
