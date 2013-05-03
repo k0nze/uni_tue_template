@@ -354,7 +354,8 @@
 			
 			% function inside the graphics environment
 			\newcommand{\newfunction}[2]
-			{\draw[] plot (\x,#1) node[right] {$#2$};}
+%			\draw[color=red] plot[id=x] function{x} node[right] {$f(x) =x$};
+			{\draw[] plot[id=x] function{#1} node[right] {$#2$};}
 			
 			% Standard limes to infinity
 			%@param 1: Variable
