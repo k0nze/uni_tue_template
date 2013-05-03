@@ -52,6 +52,8 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+% For lighting symbol (contradiction)
+\usepackage{wasysym}
 
 % for head- and footline
 \usepackage{fancyhdr}
@@ -308,7 +310,7 @@
 
 	% 1.1 General Constructs
 	
-		% 1.1.1 Miscellanious / Stuff that turned out to be useful
+		% 1.1.1 Miscellanious / Stuff that turned out to be useful			
 			
 			% Standard limes to infinity
 			%@param 1: Variable
