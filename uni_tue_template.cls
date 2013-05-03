@@ -26,6 +26,35 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{uni_tue_template}
 
+\usepackage{pgfplots}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pgfplotsset{
+    double y domain/.code 2 args={
+        \pgfmathsetmacro\doubleymin{#1*2}
+        \pgfmathsetmacro\doubleymax{#2*2}
+    },
+    ejes/.style args={#1:#2 #3:#4}{
+        double y domain={#3}{#4},
+        domain=#1:#2,
+        ymin=#3,ymax=#4, restrict y to domain=\doubleymin:\doubleymax,
+        samples=100,
+        enlargelimits=false,
+        axis lines=middle,
+        xtick={#1,...,#2}, ytick={#3,...,#4},
+        xticklabels=\empty, yticklabels=\empty,
+        every axis plot post/.style={
+            black,
+            mark=none,
+            smooth
+        },
+        scale only axis,
+        width=4cm,
+        height=4cm
+    }
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % includes
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -81,7 +110,6 @@
 
 % useful for tables
 \usepackage{tabu}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -307,55 +335,27 @@
 	{\COFF}
 	{\setboolean{correctionON}{false}}
 	
+	\newenvironment
+	{function}[1]
+	{%
+		\def\bla{grid=major}
+	\begin{tikzpicture}
+		\ifthenelse{\isempty{#1}}{
+			\begin{axis}[scale=1.25,ejes=-4:4 -4:4,ylabel=$\scriptstyle f(x)$,xlabel=$\scriptstyle x$,title={Title},grid=major]
+		} {
+			\begin{axis}[scale=1.25,ejes=-4:4 -4:4,ylabel=$\scriptstyle f(x)$,xlabel=$\scriptstyle x$,title={Title},grid=major,#1]
+		}
+	}%
+	{%
+		\end{axis}
+	\end{tikzpicture}
+	}
+	
 % 1. Mathematic
 
 	% 1.1 General Constructs
 	
 		% 1.1.1 Miscellanious / Stuff that turned out to be useful
-
-			% Setting up variables for graph environment
-			\newlength{\xmin}
-			\newlength{\xmax}
-			\newlength{\ymin}
-			\newlength{\ymax}			
-			
-			% Environment for drawing graphics
-			\newenvironment{function}[5]
-			{%
-			\ifthenelse{\isempty{#5}}{
-			\begin{tikzpicture}[domain=#1:#3]
-			}{
-				\begin{tikzpicture}[domain=#1:#3,scale=#5]
-			}
-				\setlength{\xmin}{#1cm}
-				\setlength{\ymin}{#2cm}
-				\setlength{\xmax}{#3cm}
-				\setlength{\ymax}{#4cm}
-			%	
-				\addtolength{\xmax}{-.1cm}
-				\addtolength{\ymax}{-.1cm}
-				\addtolength{\xmin}{-.1cm}
-				\addtolength{\ymin}{-.1cm}
-			%	
-				\draw [very thin, color=gray] (\xmin,\ymin) grid (\xmax,\ymax);
-			%	
-				\setlength{\xmin}{#1cm}
-				\setlength{\ymin}{#2cm}
-			%	
-				\addtolength{\xmax}{.3cm}
-				\addtolength{\xmin}{-.2cm}
-				\draw[->] (\xmin,0) -- (\xmax,0) node[right] {$x$};
-			%	
-				\addtolength{\ymax}{.3cm}
-				\addtolength{\ymin}{-.2cm}
-				\draw[->] (0,\ymin) -- (0,\ymax) node[above] {$f(x)$};
-			}%
-			{\end{tikzpicture}}
-			
-			% function inside the graphics environment
-			\newcommand{\newfunction}[2]
-%			\draw[color=red] plot[id=x] function{x} node[right] {$f(x) =x$};
-			{\draw[] plot[id=x] function{#1} node[right] {$#2$};}
 			
 			% Standard limes to infinity
 			%@param 1: Variable
