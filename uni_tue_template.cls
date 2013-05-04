@@ -294,7 +294,7 @@
 	% to get red inline correction text
 	\newcommand
 	{\coril}[1]
-	{\textcolor{red}{#1}}
+	{\ifthenelse{\boolean{correctionON}}{\textcolor{red}{#1}}{\hspace{-3pt}}}
 	
 	% Switch for correction command. If enabled, corrections are shown,
 	% if not, they're (obviously) not
