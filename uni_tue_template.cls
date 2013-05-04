@@ -105,7 +105,7 @@
 	commentstyle=\color{comment},%
 	stringstyle=\color{string},%
 	keywordstyle=\color{keyword}\bfseries,%
-	basicstyle=\ttfamily\small,%
+	basicstyle=\ttfamily\footnotesize,%
 	numbers=left,
 	numberstyle=\tiny\color{black},
 	stepnumber=1,
@@ -119,7 +119,7 @@
 	commentstyle=\color{comment},%
 	stringstyle=\color{string},%
 	keywordstyle=\color{keyword}\bfseries,%
-	basicstyle=\ttfamily\small,%
+	basicstyle=\ttfamily\footnotesize,%
 	numbers=left,
 	numberstyle=\tiny\color{black},
 	stepnumber=1,
