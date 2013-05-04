@@ -290,6 +290,12 @@
 		}	
 	}
 	
+	% \coril stands for correction inline - Use this if you want
+	% to get red inline correction text
+	\newcommand
+	{\coril}[1]
+	{\textcolor{red}{#1}}
+	
 	% Switch for correction command. If enabled, corrections are shown,
 	% if not, they're (obviously) not
 	\newboolean{correctionON}
