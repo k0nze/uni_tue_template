@@ -110,8 +110,9 @@
 	numberstyle=\tiny\color{black},
 	stepnumber=1,
 	showstringspaces=false,%
-	columns=flexible,%
-	moredelim=[is][\itshape]{@@}{@@}
+	columns=fixed,%
+	moredelim=[is][\itshape]{@@}{@@},%
+	tabsize=4
 }
 
 \lstdefinestyle{php}{%
@@ -124,8 +125,9 @@
 	numberstyle=\tiny\color{black},
 	stepnumber=1,
 	showstringspaces=false,%
-	columns=flexible,%
-	moredelim=[is][\itshape]{@@}{@@}
+	columns=fixed,%
+	moredelim=[is][\itshape]{@@}{@@},%
+	tabsize=4
 }
 
 % set global parameters for pgfplot
