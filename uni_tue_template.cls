@@ -376,7 +376,7 @@
 		\ifthenelse{\isempty{#1}}{
 			\begin{axis}[ejes=-4:4 -4:4]
 		} {
-			\begin{axis}[ejes=-4:4 -4:4,#1]
+			\begin{axis}[#1]
 		}
 	}%
 	{%

@@ -74,13 +74,14 @@ d & e & f
 \textbf{Funktionen zeichnen}
 
 \begin{minipage}[c]{.4\textwidth}
-\begin{function}{scale=0.8}
+\begin{function}{ejes=-4:4 -4:4,scale=0.8}
 \drawfunction{x^2}
 \end{function}
 \end{minipage}
 \begin{minipage}[c]{.55\textwidth}
 \begin{verbatim}
-\begin{function}{scale=0.8}
+\begin{function}{ejes=-4:4 -4:4,%
+scale=0.8}
 \drawfunction{x^2}
 \end{function}
 %
@@ -97,6 +98,7 @@ d & e & f
 
 \begin{table}{ll}
 \tableHead{Option&Beschreibung}
+ejes=\{xmin:xmax ymin:ymax\}&x- und y- Bereich der Grafik\\
 scale=\{1.5\}&Vergrößert die Grafik um den Faktor 1.5\\
 ticks=none&Keine kleine Striche an den Achsen\\
 xticklabels=$\backslash$empty&Keine x- Achsenbeschriftung\\
