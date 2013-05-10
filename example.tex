@@ -71,12 +71,50 @@ d & e & f
 \verb+\correction{.25}{frame}{You've been a bad boy!}+ turns into \correction{.27}{frame}{You've been a bad boy!} (nada)\vspace{3mm}
 
 
-\textbf{Funktionen zeichnen}\\
-\begin{function}{title={$f(x)=((x-2)^2)+1$}}
-\drawfunction{((x-1)^2)+1}
-\end{function}
+\textbf{Funktionen zeichnen}
 
+\begin{minipage}[c]{.4\textwidth}
+\begin{function}{scale=0.8}
+\drawfunction{x^2}
+\end{function}
+\end{minipage}
+\begin{minipage}[c]{.55\textwidth}
+\begin{verbatim}
+\begin{function}{scale=0.8}
+\drawfunction{x^2}
+\end{function}
+%
+% Optionale Parameter werden durch
+% Kommata getrennt und in die Klammer
+% nach \begin{function} geschrieben.
+% Bsp.:
+% \begin{function}{scale=.5,sharp plot}
+\end{verbatim}
+\end{minipage}
 \newpage
+
+\textbf{Die wichtigsten Optionen für Grafiken im Überblick:}
+
+\begin{table}{ll}
+\tableHead{Option&Beschreibung}
+scale=\{1.5\}&Vergrößert die Grafik um den Faktor 1.5\\
+ticks=none&Keine kleine Striche an den Achsen\\
+xticklabels=$\backslash$empty&Keine x- Achsenbeschriftung\\
+yticklabels=$\backslash$empty&Keine y- Achsenbeschriftung\\
+sharp plot&keine Kantenglättung beim Funktionsplot\\
+smooth&Kantenglättung beim Funktionsplot\\
+legend Entries=\{fkt1,fkt2,fkt3\}&Erzeugt eine Legende\\
+title=\{Titel\}&Schreibt das Wort \gqm{Titel} über die Grafik\\
+grid=major&zeichnet ein Gitter\\
+domain=-4:4&Berich, in dem Funktionen dargestellt werden\\
+samples=100&100 Punkte berechnet, um Funktion zu plotten\\
+xlabel=\{$x$\}&x- Achsenbeschriftung\\
+ylabel=\{$f(x)$\}&y- Achsenbeschriftung\\
+xtick=\{-3,-2.5,...,4\}&x- Intervall von -3 bis 4 in 0,5er Schritten\\
+ytick=\{-3,-2.5,...,4\}&y- Intervall von -3 bis 4 in 0,5er Schritten\\
+width=5cm&Breite der Grafik\\
+height=5cm&Höhe der Grafik
+\end{table}
 
 \textbf{Code einbinden}\vspace{2mm}\\
 Dies ist ein Beispiel für den Verwendung der von \verb+\begin{lstlisting}[style=LANG]+ und \verb+\end{lstlisting}+.\vspace{3mm}\\
@@ -100,25 +138,25 @@ public class Test {
 }
 \end{lstlisting}
 
-%Beispiel: \textbf{PHP}
-%
-%\begin{lstlisting}[style=php]
-%<?php
-%	echo "Hello World";
-%	
-%	/* This is a very stupid thing to do */
-%	for($i = 0; $i < 10; $i++) {
-%		$i--;
-%	}
-%	
-%	/* Remember this for the future */
-%	if($you == "toasted bread") {
-%		echo "go home and leave the university";
-%	}
-%
-%?>
-%\end{lstlisting}
-%
+Beispiel: \textbf{PHP}
+
+\begin{lstlisting}[style=php]
+<?php
+	echo "Hello World";
+	
+	/* This is a very stupid thing to do */
+	for($i = 0; $i < 10; $i++) {
+		$i--;
+	}
+	
+	/* Remember this for the future */
+	if($you == "toasted bread") {
+		echo "go home and leave the university";
+	}
+
+?>
+\end{lstlisting}
+
 Beispiel: \textbf{C++}
 
 \begin{lstlisting}[style=cpp]
@@ -173,7 +211,7 @@ Limes & \verb|\limlim{UNTEN}| & $\limlim{n\rightarrow\infty}$\\
 \begin{tabu*}{lll}
 \tabucline[1pt]{-}
 \tableHead{Name & Befehl & Ausgabe}
-Blitz- Symbol&\verb|\lightning|&\lightning\\\hline
+Blitz- Symbol&\verb|\lightning|&\\\hline
 Grad einer Funktion & \verb|\grad| & $\grad$ \\ \hline
 runde Klammern & \verb|\lrr{INHALT}| & $\lrr{\dfrac{1}{5}}$ \\
 eckige Klammern & \verb|\lra{INHALT}| & $\lra{\dfrac{1}{2}}$ \\
