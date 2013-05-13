@@ -166,7 +166,7 @@
         xtick={#1,...,#2},% Intervall der x- Achsenbeschriftungen
         ytick={#3,...,#4},% Intervall der y- Achsenbeschriftungen
 %
-        restrict y to domain=#1:#2,% falls die Funktinon gegen +/- unendlich geht
+        restrict y to domain=#3:#4,% falls die Funktinon gegen +/- unendlich geht
 %
         axis lines=middle,% Zeichne ein karthesisches Koordinatensystem
 %
