@@ -147,28 +147,43 @@
 
 % set global parameters for pgfplot
 \pgfplotsset{
-    double y domain/.code 2 args={
-        \pgfmathsetmacro\doubleymin{#1*2}
-        \pgfmathsetmacro\doubleymax{#2*2}
-    },
-    ejes/.style args={#1:#2 #3:#4}{
-        double y domain={#3}{#4},
-        domain=#1:#2,
-        ymin=#3,ymax=#4, restrict y to domain=\doubleymin:\doubleymax,
-        samples=100,
-        enlargelimits=false,
-        axis lines=middle,
-        xtick={#1,...,#2}, ytick={#3,...,#4},
-        xticklabels=\empty, yticklabels=\empty,
-        every axis plot post/.style={
-            black,
-            mark=none,
-            smooth
-        },
-        scale only axis,
-        width=4cm,
-        height=4cm
-    }
+%
+	ejes/.style args={#1:#2 #3:#4}{
+%
+        domain=#1:#2,% Bereich, in dem die Funktionen dargestellt werden
+%
+        samples=100,% Anzahl aller Plot- Punkte pro Längeneinheit
+%
+				xlabel=$\scriptstyle x$,% x- Achsenbschriftung
+				ylabel=$\scriptstyle f(x)$,% y- Achsenbschriftung
+%
+        xmin=#1,
+        xmax=#2,
+%
+				ymin=#3,
+				ymax=#4,
+%
+        xtick={#1,...,#2},% Intervall der x- Achsenbeschriftungen
+        ytick={#3,...,#4},% Intervall der y- Achsenbeschriftungen
+%
+        restrict y to domain=#3:#4,% falls die Funktinon gegen +/- unendlich geht
+%
+        axis lines=middle,% Zeichne ein karthesisches Koordinatensystem
+%
+        tick label style={font=\tiny},% Setze Stil der Achsenbeschriftung
+%
+        smooth,% Kantenglättung von Funktionen
+%
+				axis plot post/.style={% Standard- Werte für Graphen
+					black,% schwarz
+					mark=none,% keine Punkte entlang der Kurve
+					smooth% Kantenglättung
+				},
+%
+				width=8cm,% Breite der Grafik
+				height=8cm,% Höhe der Grafik
+%
+	}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -365,9 +380,9 @@
 	{%
 	\begin{tikzpicture}
 		\ifthenelse{\isempty{#1}}{
-			\begin{axis}[scale=1.25,ejes=-4:4 -4:4,ylabel=$\scriptstyle f(x)$,xlabel=$\scriptstyle x$,title={Title},grid=major]
+			\begin{axis}[ejes=-4:4 -4:4]
 		} {
-			\begin{axis}[scale=1.25,ejes=-4:4 -4:4,ylabel=$\scriptstyle f(x)$,xlabel=$\scriptstyle x$,title={Title},grid=major,#1]
+			\begin{axis}[#1]
 		}
 	}%
 	{%
@@ -378,7 +393,7 @@
 	% Little wrapper for drawing a function in the "function"- environment
 	\newcommand{
 	\drawfunction}[1]
-	{\addplot{#1};}
+	{\addplot[]{#1};}
 	
 % 1. Mathematic
 
