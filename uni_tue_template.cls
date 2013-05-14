@@ -594,3 +594,8 @@
 			\newcommand
 			{\grad}
 			{\mathrm{grad}}
+			
+			% Umkehrfunktion
+			\newcommand
+			{\ifu}[1]
+			{#1^{-1}}
