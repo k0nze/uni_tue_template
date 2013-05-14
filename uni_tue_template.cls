@@ -434,6 +434,16 @@
 			{\lrabs}[1]
 			{\left|#1\right|}
 			
+			% floor
+			\newcommand
+			{\floor}[1]
+			{\left\lfloor#1\right\rfloor}
+			
+			% ceiling
+			\newcommand
+			{\ceiling}[1]
+			{\left\lceil#1\right\rceil}
+			
 		% 1.1.3 All- und Existenzaussagen
 			
 			% Allquantor
