@@ -18,7 +18,7 @@
 
 % TODO
 % + common code listing enviroment (style, colors, tabs)
-
+% + german quotation marks
 
 
 \LoadClass[12pt,oneside,a4paper,fleqn]{scrartcl}
@@ -29,9 +29,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % includes
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% for multi- line frames
-\usepackage{mdframed}
 
 % better font placement
 \usepackage{lmodern}
@@ -52,22 +49,9 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-% For lighting symbol (contradiction)
-\usepackage{wasysym}
 
 % for head- and footline
 \usepackage{fancyhdr}
-
-% for graphics
-\usepackage{tikz}
-% for functions
-\usepackage{pgfplots}
-
-% for displaying colors
-\usepackage{xcolor}
-
-% for code
-\usepackage{listings}
 
 % line spacing
 \usepackage[onehalfspacing]{setspace}
@@ -87,89 +71,13 @@
 \usepackage{tabu}
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % define some stuff
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\build{2}
+\def\build{1}
 
 \def\credits{Yannick Runge \& Konstantin Lübeck}
-
-% defining colors for code- style "eclipse"
-\definecolor{comment}{RGB}{63,127,95}
-\definecolor{string}{RGB}{42,0,255}
-\definecolor{keyword}{RGB}{117,0,89}
-
-% defining code- style "eclipse"
-\lstdefinestyle{java}{%
-	language=JAVA,%
-	commentstyle=\color{comment},%
-	stringstyle=\color{string},%
-	keywordstyle=\color{keyword}\bfseries,%
-	basicstyle=\ttfamily\footnotesize,%
-	numbers=left,
-	numberstyle=\tiny\color{black},
-	stepnumber=1,
-	showstringspaces=false,%
-	columns=fixed,%
-	moredelim=[is][\itshape]{@@}{@@},%
-	tabsize=4
-}
-
-\lstdefinestyle{php}{%
-	language=PHP,%
-	commentstyle=\color{comment},%
-	stringstyle=\color{string},%
-	keywordstyle=\color{keyword}\bfseries,%
-	basicstyle=\ttfamily\footnotesize,%
-	numbers=left,
-	numberstyle=\tiny\color{black},
-	stepnumber=1,
-	showstringspaces=false,%
-	columns=fixed,%
-	moredelim=[is][\itshape]{@@}{@@},%
-	tabsize=4
-}
-
-\lstdefinestyle{cpp}{%
-	language=C++,%
-	commentstyle=\color{comment},%
-	stringstyle=\color{string},%
-	keywordstyle=\color{keyword}\bfseries,%
-	basicstyle=\ttfamily\footnotesize,%
-	numbers=left,
-	numberstyle=\tiny\color{black},
-	stepnumber=1,
-	showstringspaces=false,%
-	columns=fixed,%
-	moredelim=[is][\itshape]{@@}{@@},%
-	tabsize=4
-}
-
-% set global parameters for pgfplot
-\pgfplotsset{
-    double y domain/.code 2 args={
-        \pgfmathsetmacro\doubleymin{#1*2}
-        \pgfmathsetmacro\doubleymax{#2*2}
-    },
-    ejes/.style args={#1:#2 #3:#4}{
-        double y domain={#3}{#4},
-        domain=#1:#2,
-        ymin=#3,ymax=#4, restrict y to domain=\doubleymin:\doubleymax,
-        samples=100,
-        enlargelimits=false,
-        axis lines=middle,
-        xtick={#1,...,#2}, ytick={#3,...,#4},
-        xticklabels=\empty, yticklabels=\empty,
-        every axis plot post/.style={
-            black,
-            mark=none,
-            smooth
-        },
-        scale only axis,
-        width=4cm,
-        height=4cm
-    }
-}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % set some typo stuff
@@ -306,79 +214,12 @@
 	\newcommand
 	{\tableHead}[1]
 	{#1 \\ \hline}
-
-	% German quotation marks
-	% @param 1: Contents between quotation marks
-	\newcommand
-	{\gqm}[1]
-	{\glqq #1\grqq}
-	
-	% For correcting exercises
-	% @param 1:	If empty, correction text (nearly) whole textwidth.
-	% 						Else, enter something between 0 and 1 (default 0.95)
-	% @param 2:	If empty, no box around correction text.
-	%						Else, enter "frame" and box is drawn
-	% @param 3:	Contents of the correction
-	\newcommand
-	{\correction}[3]
-	{
-		\ifthenelse{\boolean{correctionON}}{
-			\ifthenelse{\isempty{#1}} {
-				\def\boxwidth{.95}
-			} {
-				\def\boxwidth{#1}
-			}
-			
-			\ifthenelse{\equal{frame}{#2}} {
-				\textcolor{red}{\fbox{\parbox{\boxwidth\textwidth}{#3}}}		
-			} {
-				\textcolor{red}{\parbox{\boxwidth\textwidth}{#3}}
-			}
-		} {
-			%If disabled, do nothing
-		}	
-	}
-	
-	% Switch for correction command. If enabled, corrections are shown,
-	% if not, they're (obviously) not
-	\newboolean{correctionON}
-	\setboolean{correctionON}{true}
-	
-	% For switching correction value
-	\newcommand
-	{\CON}
-	{\setboolean{correctionON}{true}}
-	
-	\newcommand
-	{\COFF}
-	{\setboolean{correctionON}{false}}
-	
-	% For drawing functions
-	\newenvironment
-	{function}[1]
-	{%
-	\begin{tikzpicture}
-		\ifthenelse{\isempty{#1}}{
-			\begin{axis}[scale=1.25,ejes=-4:4 -4:4,ylabel=$\scriptstyle f(x)$,xlabel=$\scriptstyle x$,title={Title},grid=major]
-		} {
-			\begin{axis}[scale=1.25,ejes=-4:4 -4:4,ylabel=$\scriptstyle f(x)$,xlabel=$\scriptstyle x$,title={Title},grid=major,#1]
-		}
-	}%
-	{%
-		\end{axis}
-	\end{tikzpicture}
-	}
-	
-	% Little wrapper for drawing a function in the "function"- environment
-	\newcommand{
-	\drawfunction}[1]
-	{\addplot{#1};}
 	
 % 1. Mathematic
 
 	% 1.1 General Constructs
 	
-		% 1.1.1 Miscellanious / Stuff that turned out to be useful			
+		% 1.1.1 Miscellanious / Stuff that turned out to be useful
 			
 			% Standard limes to infinity
 			%@param 1: Variable
@@ -567,9 +408,3 @@
 		% \circ
 
 		% ...
-	% 1.5 Analysis
-		
-			% Grad einer Funktion
-			\newcommand
-			{\grad}
-			{\mathrm{grad}}
