@@ -120,6 +120,8 @@ height=5cm&Höhe der Grafik
 
 \textbf{Anmerkung:} Es ist auch möglich, die Klammer hinter \verb+\begin{function}+ leer zu lassen, dann wird alles auf default- Werte gesetzt.
 
+\newpage
+
 \textbf{Code einbinden}\vspace{2mm}\\
 Dies ist ein Beispiel für den Verwendung der von \verb+\begin{lstlisting}[style=LANG]+ und \verb+\end{lstlisting}+.\vspace{3mm}\\
 Beispiel: \textbf{Java}
@@ -142,24 +144,6 @@ public class Test {
 }
 \end{lstlisting}
 
-Beispiel: \textbf{PHP}
-
-\begin{lstlisting}[style=php]
-<?php
-	echo "Hello World";
-	
-	/* This is a very stupid thing to do */
-	for($i = 0; $i < 10; $i++) {
-		$i--;
-	}
-	
-	/* Remember this for the future */
-	if($you == "toasted bread") {
-		echo "go home and leave the university";
-	}
-
-?>
-\end{lstlisting}
 
 Beispiel: \textbf{C++}
 
@@ -186,7 +170,8 @@ Verfügbare Sprachen: java, php, cpp
 UND-Junktor & \verb|\land| & $\land$\\
 ODER-Junktor & \verb|\lor| & $\lor$\\
 NICHT-Junktor & \verb|\lnot| & $\lnot$\\
-XOR-Junktor & \verb|\lxor| & $\lxor$\\ \hline
+XOR-Junktor & \verb|\lxor| & $\lxor$\\
+\hline
 natürliche Zahlen & \verb|\mn| & $\mn$\\
 reelle Zahlen & \verb|\mr| & $\mr$\\
 ganze Zahlen & \verb|\mz| & $\mz$\\
@@ -194,7 +179,8 @@ rationale Zahlen & \verb|\mq| & $\mq$\\
 komplexe Zahlen & \verb|\mc| & $\mc$\\
 Lösungsmenge & \verb|\ml| & $\ml$\\
 leere Menge & \verb|\mvoid| & $\mvoid$\\
-Potenzmenge & \verb|\mpz| & $\mpz$\\ \hline
+Potenzmenge & \verb|\mpz| & $\mpz$\\
+\hline
 Vereinigung & \verb|\mor| & $\mor$\\
 Schnitt & \verb|\mand| & $\mand$\\
 symmetrische Differenz & \verb|\mnand| & $\mnand$\\
@@ -203,7 +189,8 @@ Komplement & \verb|\mcp| & $\mcp$\\
 Teilmenge & \verb|\mpo| & $\mpo$\\
 Summe aller Vereinigungen & \verb|\morsum{UNTEN}{OBEN}| & $\morsum{A\in\mathcal{A}}{n}$\\
 Summe aller Schnitte & \verb|\mandsum{UNTEN}{OBEN}| & $\mandsum{A\in\mathcal{A}}{n}$\\ 
-Karthesisches Produkt & \verb|\mkth{UNTEN}{OBEN}| & $\mkth{A\in\mathcal{A}}{n}$ \\\hline
+Karthesisches Produkt & \verb|\mkth{UNTEN}{OBEN}| & $\mkth{A\in\mathcal{A}}{n}$ \\
+\hline
 Summe/Reihe & \verb|\limsum{UNTEN}{OBEN}| & $\limsum{n=0}{\infty}$\\
 Produkt & \verb|\limprod{UNTEN}{OBEN}| & $\limprod{n=0}{\infty}$\\
 Limes & \verb|\limlim{UNTEN}| & $\limlim{n\rightarrow\infty}$\\
@@ -215,15 +202,20 @@ Limes & \verb|\limlim{UNTEN}| & $\limlim{n\rightarrow\infty}$\\
 \begin{tabu*}{lll}
 \tabucline[1pt]{-}
 \tableHead{Name & Befehl & Ausgabe}
-Blitz- Symbol&\verb|\lightning|&\\\hline
+Blitz- Symbol&\verb|\lightning|&\\
+\hline
 Grad einer Funktion & \verb|\grad| & $\grad$ \\ 
-Umkehrfunktion & \verb|\ifu{f}| & $\ifu{f}$\\ \hline
+Umkehrfunktion & \verb|\ifu{f}| & $\ifu{f}$\\ 
+\gqm{differenzierbar} & \verb|\diffbar| & \diffbar\\
+Differentialquotient & \verb|\dq{x}| & $\dq{x}$\\
+\hline
 runde Klammern & \verb|\lrr{INHALT}| & $\lrr{\dfrac{1}{5}}$ \\
 eckige Klammern & \verb|\lra{INHALT}| & $\lra{\dfrac{1}{2}}$ \\
 geschweifte Klammern &\verb|\lrc{INHALT}|& $\lrc{\dfrac{1}{3}}$ \\
 Absolutbetrag & \verb|\lrabs{INHALT}| & $\lrabs{\dfrac{1}{4}}$ \\
 Floor & \verb|\floor{INHALT}| & $\floor{\dfrac{x}{x^2}}$ \\
-Ceiling & \verb|\ceiling{INHALT}| & $\ceiling{\dfrac{1}{x}}$ \\ \hline
+Ceiling & \verb|\ceiling{INHALT}| & $\ceiling{\dfrac{1}{x}}$ \\
+\hline
 deutsche Anführungszeichen & \verb|\gqm{}| & \gqm{Hallo} \\
 build & \verb|\build| & \build \\
 credits & \verb|\credits| & \\

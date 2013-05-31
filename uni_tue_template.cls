@@ -609,3 +609,13 @@
 			\newcommand
 			{\ifu}[1]
 			{#1^{-1}}
+			
+			% Diff.quotient
+			\renewcommand
+			{\dq}[1]
+			{\frac{d}{d#1}}
+			
+			% differenzierbar
+			\newcommand
+			{\diffbar}
+			{differenzierbar\;}
