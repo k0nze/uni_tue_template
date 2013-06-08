@@ -156,6 +156,17 @@ int main() {
 }
 \end{lstlisting}
 
+\begin{lstlisting}[style=mipsasm]
+sw $ra,($sp)
+addi $sp,$sp,-4
+sw $fp,($sp)
+addi $sp,$sp,-4
+add	$fp,$sp,12
+lw $t0,($fp)
+li $t1, 2
+bgt $t0,$t1,do_recurse
+li $t0, 1
+\end{lstlisting}
 Verfügbare Sprachen: java, php, cpp
 
 
