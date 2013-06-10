@@ -473,7 +473,7 @@
 		% @param 2: index above the integral
 		\newcommand
 		{\limint}[2]
-		{\int\limits_{#1}^{#2}}
+		{\displaystyle\int\limits_{#1}^{#2}}
 		
 		% Limes with limits
 		%@param 1: What's under the limes
@@ -626,3 +626,8 @@
 			\newcommand
 			{\diffbar}
 			{differenzierbar\;}
+			
+			%dx
+			\newcommand
+			{\intd}[1]
+			{\mathrm{d#1}}
