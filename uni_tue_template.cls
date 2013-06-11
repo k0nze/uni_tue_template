@@ -90,7 +90,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % define some stuff
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\build{5}
+\def\build{4}
 
 \def\credits{Yannick Runge \& Konstantin Lübeck}
 
@@ -468,6 +468,13 @@
 		{\limprod}[2]
 		{\prod\limits_{#1}^{#2}}
 		
+		% Integral witch limits
+		% @param 1: Index below the integral
+		% @param 2: index above the integral
+		\newcommand
+		{\limint}[2]
+		{\displaystyle\int\limits_{#1}^{#2}}
+		
 		% Limes with limits
 		%@param 1: What's under the limes
 		\newcommand
@@ -619,3 +626,8 @@
 			\newcommand
 			{\diffbar}
 			{differenzierbar\;}
+			
+			%dx
+			\newcommand
+			{\intd}[1]
+			{\mathrm{d}#1}
