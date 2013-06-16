@@ -86,6 +86,9 @@
 % useful for tables
 \usepackage{tabu}
 
+% to show eps figures
+\usepackage{epstopdf} 
+
 
 %% MIPS Assembler language definition for the LaTeX listings package
 %% mips.sty
