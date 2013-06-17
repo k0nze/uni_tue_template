@@ -701,7 +701,7 @@ comment=[l]\#%
 			% Diff.quotient
 			\renewcommand
 			{\dq}[1]
-			{\frac{d}{d#1}}
+			{\frac{\mbox{d}}{\mbox{d}#1}}
 			
 			% differenzierbar
 			\newcommand
@@ -711,4 +711,4 @@ comment=[l]\#%
 			%dx
 			\newcommand
 			{\intd}[1]
-			{\mathrm{d}#1}
+			{\;\mathrm{d}#1}
