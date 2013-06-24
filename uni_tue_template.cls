@@ -408,7 +408,13 @@ comment=[l]\#%
 	% standard exercise name
 	\newcommand
 	{\exerciseName}
-	{Aufgabe}	
+	{Aufgabe}
+	
+	% over- and underset
+
+	\newcommand
+	{\ouset}[2]
+	{\overset{\mbox{\scriptsize #1}}{\underset{\mbox{\scriptsize #2}}{=}}}
 	
 	% Do not begin a new paragraph after you used \exercise. Because the "\\" is
 	% directly implemented in the command it would otherwise cause an overfull hbox.
