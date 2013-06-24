@@ -411,7 +411,6 @@ comment=[l]\#%
 	{Aufgabe}
 	
 	% over- and underset
-
 	\newcommand
 	{\ouset}[2]
 	{\overset{\mbox{\scriptsize #1}}{\underset{\mbox{\scriptsize #2}}{=}}}
