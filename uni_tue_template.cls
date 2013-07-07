@@ -584,6 +584,11 @@ comment=[l]\#%
 			{\ceiling}[1]
 			{\left\lceil#1\right\rceil}
 			
+			% vector
+			\newcommand
+			{\lrv}[1]
+			{\lrr{\begin{smallmatrix}#1\end{smallmatrix}}}
+			
 		% 1.1.3 All- und Existenzaussagen
 			
 			% Allquantor
