@@ -40,7 +40,7 @@
 \usepackage[left=2.5cm,right=2.5cm,top=1.5cm,bottom=2cm,includeheadfoot]{geometry}
 
 % german spelling
-\usepackage[ngerman]{babel}
+\usepackage[ngerman,english]{babel}
 
 % set input encoding
 \usepackage[utf8]{inputenc}
