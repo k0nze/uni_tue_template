@@ -776,3 +776,22 @@ comment=[l]\#%
 			\newcommand
 			{\intd}[1]
 			{\;\mathrm{d}#1}
+			
+			
+			
+\newcommand{\mysim}[1]{\overset{\sim}{#1}}
+
+\renewcommand{\names}{Mathe II Skript zur Vorlesung}
+
+\newcommand{\vecroom}{$\mr$- Vektorraum}
+
+\newcommand{\lrg}[1]{\left\langle #1\right\rangle}
+
+\newcommand{\la}{linear abhängig }
+\newcommand{\lu}{linear unabhängig }
+
+\newcommand{\lgs}{lineares Gleichungssystem }
+
+\newcommand{\kom}[2]{\lrr{\begin{array}{#1}#2\end{array}}}
+
+\newcommand{\intv}{\limint{}{}}
