@@ -569,6 +569,10 @@ comment=[l]\#%
 			{\lrc}[1]
 			{\left\{#1\right\}}
 			
+			% angled brackets
+			\newcommand{\lrg}[1]
+			{\left\langle #1\right\rangle}
+			
 			% absolute value
 			\newcommand
 			{\lrabs}[1]
@@ -599,33 +603,39 @@ comment=[l]\#%
 			
 		% 1.1.4 Constructs containing "\limits" command
 		
-		% Sum with limits
-		% @param 1: Index below the sum
-		% @param 2: index above the sum
-		\newcommand
-		{\limsum}[2]
-		{\sum\limits_{#1}^{#2}}
-		
-		% Product with limits
-		% @param 1: Index below the product
-		% @param 2: index above the proudct
-		\newcommand
-		{\limprod}[2]
-		{\prod\limits_{#1}^{#2}}
-		
-		% Integral witch limits
-		% @param 1: Index below the integral
-		% @param 2: index above the integral
-		\newcommand
-		{\limint}[2]
-		{\displaystyle\int\limits_{#1}^{#2}}
-		
-		% Limes with limits
-		%@param 1: What's under the limes
-		\newcommand
-		{\limlim}[1]
-		{\lim\limits_{#1}}
-		
+			% Sum with limits
+			% @param 1: Index below the sum
+			% @param 2: index above the sum
+			\newcommand
+			{\limsum}[2]
+			{\sum\limits_{#1}^{#2}}
+			
+			% Product with limits
+			% @param 1: Index below the product
+			% @param 2: index above the proudct
+			\newcommand
+			{\limprod}[2]
+			{\prod\limits_{#1}^{#2}}
+			
+			% Integral witch limits
+			% @param 1: Index below the integral
+			% @param 2: index above the integral
+			\newcommand
+			{\limint}[2]
+			{\displaystyle\int\limits_{#1}^{#2}}
+			
+			% Limes with limits
+			%@param 1: What's under the limes
+			\newcommand
+			{\limlim}[1]
+			{\lim\limits_{#1}}
+			
+		% 1.1.5 Other
+			
+			% große Tilde über ein Zeichen
+			\newcommand
+			{\bigtilde}[1]
+			{\overset{\sim}{#1}}
 		
 	% 1.2 Logische Junktoren
 		
@@ -776,22 +786,25 @@ comment=[l]\#%
 			\newcommand
 			{\intd}[1]
 			{\;\mathrm{d}#1}
-			
-			
-			
-\newcommand{\mysim}[1]{\overset{\sim}{#1}}
+	
+	% 1.6 Lineare Algebra
 
-\renewcommand{\names}{Mathe II Skript zur Vorlesung}
+		% R-Vektorraum
+		\newcommand
+		{\rvecroom}
+		{$\mr$-Vektorraum}
 
-\newcommand{\vecroom}{$\mr$- Vektorraum}
+		% linear anhängig
+		\newcommand
+		{\la}
+		{linear abhängig }		
+		
+		% linear unabhängig
+		\newcommand
+		{\lu}
+		{linear unabhängig }
 
-\newcommand{\lrg}[1]{\left\langle #1\right\rangle}
-
-\newcommand{\la}{linear abhängig }
-\newcommand{\lu}{linear unabhängig }
-
-\newcommand{\lgs}{lineares Gleichungssystem }
-
-\newcommand{\kom}[2]{\lrr{\begin{array}{#1}#2\end{array}}}
-
-\newcommand{\intv}{\limint{}{}}
+		% lineares Gleichungssystem
+		\newcommand
+		{\lgs}
+		{lineares Gleichungssystem }
