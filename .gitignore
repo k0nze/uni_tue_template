@@ -3,3 +3,7 @@
 *.aux
 *.log
 *.gz
+*.bbl
+*.blg
+*.dvi
+*.swp
