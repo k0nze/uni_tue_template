@@ -531,8 +531,8 @@ comment=[l]\#%
 	}
 	
 	% Little wrapper for drawing a function in the "function"- environment
-	\newcommand{
-	\drawfunction}[1]
+	\newcommand
+	{\drawfunction}[1]
 	{\addplot[]{#1};}
 	
 % 1. Mathematic
