@@ -85,6 +85,7 @@
 
 % useful for tables
 \usepackage{tabu}
+\usepackage{booktabs}
 
 % to show eps figures
 \usepackage{epstopdf} 
