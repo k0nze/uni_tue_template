@@ -747,3 +747,8 @@
 		\newcommand
 		{\lgs}
 		{lineares Gleichungssystem }
+		
+		% Größter gemeinsamer Teiler
+		\newcommand
+		{\ggT}
+		{\mbox{ggT}}
