@@ -101,6 +101,7 @@
 \definecolor{comment}{RGB}{63,127,95}
 \definecolor{string}{RGB}{42,0,255}
 \definecolor{keyword}{RGB}{117,0,89}
+\definecolor{delim}{RGB}{20,105,176}
 
 % defining code- style "eclipse"
 \lstdefinestyle{java}{%
@@ -134,6 +135,21 @@
 }
 
 \lstdefinestyle{cpp}{%
+	language=C++,%
+	commentstyle=\color{comment},%
+	stringstyle=\color{string},%
+	keywordstyle=\color{keyword}\bfseries,%
+	basicstyle=\ttfamily\footnotesize,%
+	numbers=left,
+	numberstyle=\tiny\color{black},
+	stepnumber=1,
+	showstringspaces=false,%
+	columns=fixed,%
+	moredelim=[is][\itshape]{@@}{@@},%
+	tabsize=4
+}
+
+\lstdefinestyle{json}{%
 	language=C++,%
 	commentstyle=\color{comment},%
 	stringstyle=\color{string},%
