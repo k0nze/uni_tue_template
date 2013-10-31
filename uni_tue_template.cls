@@ -164,6 +164,20 @@
 	tabsize=4
 }
 
+\lstdefinelanguage{plain}{}
+
+\lstdefinestyle{plain}{%
+	language=plain,%
+	basicstyle=\ttfamily\footnotesize,%
+	numbers=left,
+	numberstyle=\tiny\color{black},
+	stepnumber=1,
+	showstringspaces=false,%
+	columns=fixed,%
+	moredelim=[is][\itshape]{@@}{@@},%
+	tabsize=4
+}
+
 \lstdefinestyle{x86asm}{
 	language=[x86masm]Assembler,
 	commentstyle=\color{comment},%
