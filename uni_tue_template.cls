@@ -164,9 +164,12 @@
 	tabsize=4
 }
 
-\lstdefinelanguage{plain}{}
+\lstdefinelanguage{plain}{%
+    comment=[l]{//}
+}
 
 \lstdefinestyle{plain}{%
+	commentstyle=\color{comment},%
 	language=plain,%
 	basicstyle=\ttfamily\footnotesize,%
 	numbers=left,
