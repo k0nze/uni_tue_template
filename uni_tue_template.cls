@@ -342,9 +342,12 @@
 	{Aufgabe}
 	
 	% over- and underset
+  % @param 1: What's in the middle
+  % @param 2: What's above
+  % @param 3: What's below
 	\newcommand
-	{\ouset}[2]
-	{\overset{\mbox{\scriptsize #1}}{\underset{\mbox{\scriptsize #2}}{=}}}
+	{\ouset}[3]
+	{\overset{#2}{\underset{#3}{#1}}}
 	
 	% Do not begin a new paragraph after you used \exercise. Because the "\\" is
 	% directly implemented in the command it would otherwise cause an overfull hbox.
