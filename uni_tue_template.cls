@@ -362,6 +362,14 @@
 		}
 	}	
 	
+  % small math text
+  % Use this if you want to write small text in math mode but do not want it
+  % to be in italics
+  % @param 1: The small text
+  \newcommand
+  {\smt}[1]
+  {\mbox{\scriptsize #1}}
+
 	\newcommand
 	{\subExBegin}[1]
 	{
