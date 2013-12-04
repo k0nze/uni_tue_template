@@ -370,6 +370,16 @@
   {\smt}[1]
   {\mbox{\scriptsize #1}}
 
+  % Identität
+  \newcommand
+  {\id}
+  {\mbox{id}}
+
+  % Rang
+  \newcommand
+  {\rg}
+  {\mbox{rg}}
+
 	\newcommand
 	{\subExBegin}[1]
 	{
