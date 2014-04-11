@@ -211,6 +211,21 @@
 	tabsize=4
 }
 
+\lstdefinestyle{R}{
+    language=R,%
+	commentstyle=\color{comment},%
+	stringstyle=\color{string},%
+	keywordstyle=\color{keyword}\bfseries,%
+	basicstyle=\ttfamily\footnotesize,%
+	numbers=left,
+	numberstyle=\tiny\color{black},
+	stepnumber=1,
+	showstringspaces=false,%
+	columns=fixed,%
+	moredelim=[is][\itshape]{@@}{@@},%
+	tabsize=4
+}
+
 % set global parameters for pgfplot
 \pgfplotsset{
 %

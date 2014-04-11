@@ -156,21 +156,19 @@ int main() {
 }
 \end{lstlisting}
 
-Beispiel: \textbf{JSON}
+Beispiel: \textbf{R}
 
-\begin{lstlisting}[style=json]
-{"test" : 
-    {"hello": [1, 2, 4]}
+\begin{lstlisting}[style=R]
+# Fibonacci
+F <- function(n) {
+    n <- as.integer(n)
+    if(is.na(n)) return(NA)
+    if(n<1) return(0)
+    if(n==1) return(1)
+    return(F(n-1)+F(n-2))
 }
+vapply(0:10, F, 0)
 \end{lstlisting}
-
-\begin{lstlisting}[style=plain]
-// This is plain text for pseudo code
-IF you are stupid
-    go home
-\end{lstlisting}
-Verfügbare Sprachen: java, php, cpp, json, plain
-
 
 \newpage
 
@@ -240,18 +238,19 @@ Vektor & \verb|\lrv{a\\b\\c}| & $\lrv{a\\b\\c}$ \\
 \gqm{linear abhängig} & \verb|\la| & \la\\
 \gqm{lin. Gl.sys.} & \verb|\lgs| & \lgs\\
 ggT in Math- Mode & \verb|\ggT(A)| & $\ggT(A)$\\
-\hline
-Tilde über Zeichen & \verb|\bigtilde{INHALT}| & $\bigtilde{w}$\\
-Kleiner Text in Math- Mode & \verb|A^\smt{text}| & $A^{\smt{text}}$\\
 \tabucline[1pt]{-}
 \end{tabu*}
 
 \begin{tabu*}{lll}
-\tabucline[1pt]{-}
 \tableHead{Name & Befehl & Ausgabe}
+\tabucline[1pt]{-}
+Tilde über Zeichen & \verb|\bigtilde{INHALT}| & $\bigtilde{w}$\\
+Kleiner Text in Math- Mode & \verb|A^\smt{text}| & $A^{\smt{text}}$\\
+\tabucline[1pt]{-}
 deutsche Anführungszeichen & \verb|\gqm{}| & \gqm{Hallo} \\
 build & \verb|\build| & \build \\
 credits & \verb|\credits| & \\
+\tabucline[1pt]{-}
 \end{tabu*}
 
 
