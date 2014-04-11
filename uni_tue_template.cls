@@ -93,7 +93,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % define some stuff
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\build{5}
+\def\build{6}
 
 \def\credits{Yannick Runge \& Konstantin Lübeck}
 
