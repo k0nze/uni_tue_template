@@ -172,6 +172,36 @@ vapply(0:10, F, 0)
 
 \newpage
 
+\begin{center}
+{\Large Baum- Beispiel}
+
+\begin{tikzpicture}
+\node [tn_red] {33}
+	child{node [tn_black] {15}
+		child{node [tn_black] {10}
+            child{node [tn_black] {5}}
+            child{node [arn_x] {}
+			}
+		}
+		child {node [arn_x] {}}
+		edge from parent node [above left] {left}
+    }
+	child{node [tn_red] {47}
+		child{node [tn_red] {38}
+			child{ node [tn_black] {36}}
+			child{ node [tn_red] {39}}
+		}
+		child{node [tn_black] {51}
+			child{ node [tn_black] {49}}
+			child{ node [arn_x] {}}
+		}
+		edge from parent node [above right] {right}
+	};
+\end{tikzpicture}\\
+\end{center}
+
+\newpage
+
 \vspace{5mm}
 \textbf{Befehlsübersicht}
 
@@ -252,6 +282,5 @@ build & \verb|\build| & \build \\
 credits & \verb|\credits| & \\
 \tabucline[1pt]{-}
 \end{tabu*}
-
 
 \end{document}

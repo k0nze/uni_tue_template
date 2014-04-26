@@ -60,8 +60,11 @@
 
 % for graphics
 \usepackage{tikz}
+%for more beautiful arrows
+\usetikzlibrary{arrows}
 % for functions
 \usepackage{pgfplots}
+\pgfplotsset{compat=newest}
 
 % for displaying colors
 \usepackage{xcolor}
@@ -224,6 +227,26 @@
 	columns=fixed,%
 	moredelim=[is][\itshape]{@@}{@@},%
 	tabsize=4
+}
+
+% setting general parameters for tikz environment
+% these can be overridden by an optional parameter like e.g.
+% \begin{tikzpicture}[<->,sibling distance=3cm] (for an undirected graph with different hor. node distance)
+\tikzset{
+  treenode/.style = {align=center, inner sep=.5pt, text centered,
+    font=\sffamily}, % "abstract" treenode type
+  tn_black/.style = {treenode, circle, black, font=\sffamily, draw=black,
+    fill=white,text width=1.5em, thick},% black node
+  tn_red/.style = {treenode, circle, red, draw=red,
+    text width=1.5em, thick},% red node
+  arn_x/.style = {treenode, rectangle, draw=black,
+    minimum width=0.5em, minimum height=0.5em},% null square
+    ->,% kind of arrow between two nodes
+	>=stealth',% beautiful arrows
+	level/.style={
+		sibling distance = 5cm/#1,% horizontal distance between two nodes (don't change #1 - things get messy)
+		level distance = 1.5cm% vertical distance between arrows
+	}
 }
 
 % set global parameters for pgfplot
