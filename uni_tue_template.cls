@@ -239,7 +239,7 @@
     fill=white,text width=1.5em, thick},% black node
   tn_red/.style = {treenode, circle, red, draw=red,
     text width=1.5em, thick},% red node
-  arn_x/.style = {treenode, rectangle, draw=black,
+  tn_null/.style = {treenode, rectangle, draw=black,
     minimum width=0.5em, minimum height=0.5em},% null square
     ->,% kind of arrow between two nodes
 	>=stealth',% beautiful arrows
@@ -531,7 +531,7 @@
 	
 	% For drawing functions
 	\newenvironment
-	{function}[1]
+	{drawgraph}[1]
 	{%
 	\begin{tikzpicture}
 		\ifthenelse{\isempty{#1}}{
