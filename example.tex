@@ -74,16 +74,16 @@ d & e & f
 \textbf{Funktionen zeichnen}
 
 \begin{minipage}[c]{.4\textwidth}
-\begin{function}{ejes=-4:4 -4:4,scale=0.8}
+\begin{drawgraph}{ejes=-4:4 -4:4,scale=0.8}
 \drawfunction{x^2}
-\end{function}
+\end{drawgraph}
 \end{minipage}
 \begin{minipage}[c]{.55\textwidth}
 \begin{verbatim}
-\begin{function}{ejes=-4:4 -4:4,%
+\begin{drawgraph}{ejes=-4:4 -4:4,%
 scale=0.8}
 \drawfunction{x^2}
-\end{function}
+\end{drawgraph}
 %
 % Optionale Parameter werden durch
 % Kommata getrennt und in die Klammer
@@ -180,10 +180,10 @@ vapply(0:10, F, 0)
 	child{node [tn_black] {15}
 		child{node [tn_black] {10}
             child{node [tn_black] {5}}
-            child{node [arn_x] {}
+            child{node [tn_null] {}
 			}
 		}
-		child {node [arn_x] {}}
+		child {node [tn_null] {}}
 		edge from parent node [above left] {left}
     }
 	child{node [tn_red] {47}
@@ -193,7 +193,7 @@ vapply(0:10, F, 0)
 		}
 		child{node [tn_black] {51}
 			child{ node [tn_black] {49}}
-			child{ node [arn_x] {}}
+			child{ node [tn_null] {}}
 		}
 		edge from parent node [above right] {right}
 	};
