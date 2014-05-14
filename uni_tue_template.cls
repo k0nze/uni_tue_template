@@ -91,7 +91,15 @@
 \usepackage{booktabs}
 
 % to show eps figures
-\usepackage{epstopdf} 
+\usepackage{epstopdf}
+
+% for pseudo algorithms
+\usepackage[boxed,algonl]{algorithm2e}
+\SetKw{True}{true}
+\SetKw{False}{false}
+\SetKw{Udef}{udef}
+\SetKw{Or}{or}
+\DontPrintSemicolon
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % define some stuff

@@ -197,9 +197,30 @@ vapply(0:10, F, 0)
 		}
 		edge from parent node [above right] {right}
 	};
-\end{tikzpicture}\\
+\end{tikzpicture}
 \end{center}
 
+{\Large Beispiel für Pseudo- Code}
+\begin{algorithm}
+\tcc*{This is a comment}
+\KwIn{Input variables a, b, c}
+\KwOut{Object o}
+\textsc{FUNCTION}(a,b,c)\;
+a $\leftarrow$ heapsort(a)\;
+Object o\;
+o.callMethod(b ,c)\;
+\While{o is not null}{
+	o $\leftarrow$ myFunction(a,b)\;
+}
+\If{o is null}{
+	print ''this is a pretty stupid check at this point''
+}
+\Return o
+\caption{Beispiel Pseudo- Algorithmus}
+\label{AVL}
+\end{algorithm}
+
+Hier erkläre ich wie der Algorithmus \ref{AVL} auf Seite \pageref{AVL} referenziert wird.
 \newpage
 
 \vspace{5mm}
